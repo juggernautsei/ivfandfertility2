@@ -231,7 +231,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_orderby'])) {
         $inputArray = array($from_date . ' 00:00:00', $to_date . ' 23:59:59');
         $query = "SELECT r.pid, r.dtime, " .
         "r.amount1 AS amount1, " .
-        "SUM(r.amount2) AS amount2, " .
+        "r.amount2 AS amount2, " .
         "MAX(r.method) AS method, " .
         "MAX(r.source) AS source, " .
         "MAX(r.user) AS user, " .
