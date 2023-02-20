@@ -279,7 +279,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_orderby'])) {
             <?php echo text($row['source']); ?>
   </td>
   <td >
-            <?php echo text(bucks($row['amount1'])); ?>
+            <?php echo text(bucks($row['amount1']))/2; ?>
   </td>
   <td >
             <?php echo text(bucks($row['amount2'])); ?>
