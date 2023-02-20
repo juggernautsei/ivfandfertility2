@@ -230,8 +230,8 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_orderby'])) {
 
         $inputArray = array($from_date . ' 00:00:00', $to_date . ' 23:59:59');
         $query = "SELECT r.pid, r.dtime, " .
-        "SUM(r.amount1) AS amount1, " .
-        //"SUM(r.amount2) AS amount2, " .
+        "r.amount1 AS amount1, " .
+        "SUM(r.amount2) AS amount2, " .
         "MAX(r.method) AS method, " .
         "MAX(r.source) AS source, " .
         "MAX(r.user) AS user, " .
@@ -258,6 +258,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_orderby'])) {
 
         while ($row = sqlFetchArray($res)) {
             // Make the timestamp URL-friendly.
+
             $timestamp = preg_replace('/[^0-9]/', '', $row['dtime']);
             ?>
    <tr>
