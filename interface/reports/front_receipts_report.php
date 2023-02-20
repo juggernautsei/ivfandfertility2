@@ -218,9 +218,9 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_orderby'])) {
 <th> <?php echo xlt('ID'); ?> </th>
 <th> <?php echo xlt('Method'); ?> </th>
 <th> <?php echo xlt('Source'); ?> </th>
-<th align='right'> <?php echo xlt('Today'); ?> </th>
-<th align='right'> <?php echo xlt('Previous'); ?> </th>
-<th align='right'> <?php echo xlt('Total'); ?> </th>
+<th > <?php echo xlt('Today'); ?> </th>
+<th > <?php echo xlt('Previous'); ?> </th>
+<th > <?php echo xlt('Total'); ?> </th>
 </thead>
 <tbody>
     <?php
@@ -278,13 +278,13 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_orderby'])) {
   <td>
             <?php echo text($row['source']); ?>
   </td>
-  <td align='right'>
+  <td >
             <?php echo text(bucks($row['amount1'])); ?>
   </td>
-  <td align='right'>
+  <td >
             <?php echo text(bucks($row['amount2'])); ?>
   </td>
-  <td align='right'>
+  <td >
             <?php echo text(bucks($row['amount1'] + $row['amount2'])); ?>
   </td>
  </tr>
@@ -304,13 +304,13 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_orderby'])) {
  <td colspan='5'>
         <?php echo xlt('Totals'); ?>
  </td>
- <td align='right'>
+ <td >
         <?php echo text(bucks($total1)); ?>
  </td>
- <td align='right'>
+ <td >
         <?php echo text(bucks($total2)); ?>
  </td>
- <td align='right'>
+ <td >
         <?php echo text(bucks($total1 + $total2)); ?>
  </td>
 </tr>
