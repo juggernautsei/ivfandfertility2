@@ -671,7 +671,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         }
     } else {
         if (!$form_facility) {
-            $form_facility = '4';
+            //if facility is blank, select the first one in the table instead of hard coding this number
+            $form_facility = sqlQuery("select id from facility");
+            $form_facility = $form_facility['id'];
         }
 
         $facility = $facilityService->getById($form_facility);
@@ -683,7 +685,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             <div class="table-responsive">
                 <table class="border-0 table" style="width: 98%">
                     <tr>
-                        <td class="title"><?php echo text($facility['name']) . $form_patient . ' ' . $form_facility; ?></td>
+                        <td class="title"><?php echo text($facility['name']); ?></td>
                     </tr>
                     <tr>
                         <td class="title"><?php echo text($facility['street']); ?></td>
