@@ -699,7 +699,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <tr>
                         <td class="title"><?php echo xlt('Tax Id') . ': ' . text($facility['federal_ein']); ?></td>
                     </tr>
-                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td class="title"><?php echo xlt('NPI') . ': ' . text($facility['facility_npi']); ?></td>
+                    </tr>
                     <tr>
                         <td class="title"><?php echo xlt('Patient Ledger'); ?></td>
                     </tr>
