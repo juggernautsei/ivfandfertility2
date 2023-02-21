@@ -681,9 +681,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         ?>
         <div id="report_header">
             <div class="table-responsive">
-                <table class="border-0 table" width="98%" cellspacing="0" cellpadding="0">
+                <table class="border-0 table" style="width: 98%">
                     <tr>
-                        <td class="title"><?php echo text($facility['name']) . $form_patient; ?></td>
+                        <td class="title"><?php echo text($facility['name']) . $form_patient . ' ' . $form_facility; ?></td>
                     </tr>
                     <tr>
                         <td class="title"><?php echo text($facility['street']); ?></td>
