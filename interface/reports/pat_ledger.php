@@ -671,7 +671,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         }
     } else {
         if (!$form_facility) {
-            $form_facility = '3';
+            $form_facility = '4';
         }
 
         $facility = $facilityService->getById($form_facility);
