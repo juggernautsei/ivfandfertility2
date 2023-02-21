@@ -692,7 +692,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         <td class="title"><?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?></td>
                     </tr>
                     <tr>
-                        <td class="title"><?php echo xlt('Phone') . ': ' . text($facility['phone']); ?></td>
+                        <td class="title"><?php echo xlt('Phone') . ': -' . text($facility['phone']); ?></td>
                     </tr>
                     <tr>
                         <td class="title"><?php echo xlt('Tax Id') . ': ' . text($facility['federal_ein']); ?></td>
