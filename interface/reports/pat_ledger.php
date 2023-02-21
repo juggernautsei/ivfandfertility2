@@ -703,7 +703,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <tr>
                         <td class="title"><?php echo xlt('Patient Ledger'); ?></td>
                     </tr>
-                    <tr>
+                    <!--<tr>
                         <?php
                         $title = xl('All Providers');
                         if ($form_provider) {
@@ -717,7 +717,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         $title = xl('For Dates') . ': ' . oeFormatShortDate($form_from_date) . ' - ' . oeFormatShortDate($form_to_date);
                         ?>
                         <td class="title"><?php echo text($title); ?></td>
-                    </tr>
+                    </tr>-->
                 </table>
             </div>
             <br/>
