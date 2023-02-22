@@ -677,8 +677,8 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         }
 
         $facility = $facilityService->getById($form_facility);
-        echo "PID" . $form_patient;
-        $patient = sqlQuery("SELECT * from patient_data WHERE pid = ?", array($form_patient));
+
+        $patient = sqlQuery("SELECT * from patient_data WHERE pid = ?", array($form_pid));
         $pat_dob = $patient['DOB'] ?? null;
         $pat_name = ($patient['fname'] ?? '') . ' ' . ($patient['lname'] ?? '');
 
@@ -751,7 +751,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             <?php echo text($form_pid);?>
                         </td>
                         <td class='font-weight-bold'> <?php echo xlt('EMAIL')?>:
-                            <?php echo text($pat_email);?>
+                            <?php echo text($patient['email']);?>
                         </td>
                     </tr>
                 </table>
