@@ -750,7 +750,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             <?php echo text($form_pid);?>
                         </td>
                         <td class='font-weight-bold'> <?php echo xlt('EMAIL')?>:
-                            <?php echo text($pat_email);?>
+                            <?php var_dump($pat_email); echo text($pat_email);?>
                         </td>
                     </tr>
                 </table>
