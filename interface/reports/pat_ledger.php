@@ -685,25 +685,25 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             <div class="table-responsive">
                 <table class="border-0 table" style="width: 98%">
                     <tr>
-                        <td class="title"><?php echo text($facility['name']); ?></td>
+                        <td class=""><?php echo text($facility['name']); ?></td>
                     </tr>
                     <tr>
-                        <td class="title"><?php echo text($facility['street']); ?></td>
+                        <td class=""><?php echo text($facility['street']); ?></td>
                     </tr>
                     <tr>
-                        <td class="title"><?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?></td>
+                        <td class=""><?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?></td>
                     </tr>
                     <tr>
-                        <td class="title"><?php echo xlt('Phone') . ': -' . text($facility['phone']); ?></td>
+                        <td class=""><?php echo xlt('Phone') . ': -' . text($facility['phone']); ?></td>
                     </tr>
                     <tr>
-                        <td class="title"><?php echo xlt('Tax Id') . ': ' . text($facility['federal_ein']); ?></td>
+                        <td class=""><?php echo xlt('Tax Id') . ': ' . text($facility['federal_ein']); ?></td>
                     </tr>
                     <tr>
-                        <td class="title"><?php echo xlt('NPI') . ': ' . text($facility['facility_npi']); ?></td>
+                        <td class=""><?php echo xlt('NPI') . ': ' . text($facility['facility_npi']); ?></td>
                     </tr>
                     <tr>
-                        <td class="title"><?php echo xlt('Patient Ledger'); ?></td>
+                        <td class=""><?php echo xlt('Patient Ledger'); ?></td>
                     </tr>
                     <!--<tr>
                         <?php
