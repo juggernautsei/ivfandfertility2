@@ -704,9 +704,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <tr>
                         <td class=""><?php echo xlt('NPI') . ': ' . text($facility['facility_npi']); ?></td>
                     </tr>
-                    <tr>
+                    <!--<tr>
                         <td class=""><?php echo xlt('Patient Ledger'); ?></td>
-                    </tr>
+                    </tr>-->
                     <!--<tr>
                         <?php
                         $title = xl('All Providers');
