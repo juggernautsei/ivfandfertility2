@@ -462,7 +462,7 @@ if ($_REQUEST['form_csvexport']) {
     <?php
     if ($type_form == '0') {
         $arrOeUiSettings = array(
-        'heading_title' => xl('Report') . " - " . xl('Patient Ledger by Date'),
+        'heading_title' => xl('Report') . " - " . xl('Patient Ledger'),
         'include_patient_name' => false,
         'expandable' => false,
         'expandable_files' => array("patient_ledger_report_xpd"),//all file names need suffix _xpd
@@ -706,7 +706,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             </div>
             <br/>
             <div class="table-responsove">
-                <table class="">
+                <table class="w-100, m-3">
                 <tr>
                 <td>
                    <p>Patient Information</p>
