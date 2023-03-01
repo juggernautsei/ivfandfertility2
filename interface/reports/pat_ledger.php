@@ -351,8 +351,9 @@ if (substr($GLOBALS['ledger_begin_date'], 0, 1) == 'Y') {
     $ledger_time = substr($GLOBALS['ledger_begin_date'], 1, 1);
     $last_year = mktime(0, 0, 0, date('m'), date('d') - $ledger_time, date('Y'));
 }
-
-$form_from_date = date('Y-m-d', $last_year);
+$lastWeek = new DateTime(NULL, new DateTimeZone('America/NewYork'));
+$lastWeek = $lastWeek->modify('-1 day')-format('Y-m-d');
+$form_from_date = date('Y-m-d', $lastWeek);
 if (!empty($_REQUEST['form_from_date'])) {
     $form_from_date = DateToYYYYMMDD($_POST['form_from_date']);
 }
@@ -739,6 +740,16 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             <?php echo text($patient['email']);?>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                        <strong><p>Doctor:</p></strong>
+
+
+                        </td>
+                        <td>
+                            <strong><p>Physician Signature:</p></strong>
+                        </td>
+                    </tr>
                 </table>
                 </div>
             </div>
@@ -899,7 +910,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         echo " </tr>\n";
         ?>
     </table>
-    <tr><td>&nbsp;</td></tr><br /><br />
+    <tr><td>&nbsp;</td></tr><br><br>
         <?php
         if ($GLOBALS['print_next_appointment_on_ledger'] == 1) {
             $next_day = mktime(0, 0, 0, date('m'), date('d') + 1, date('Y'));
