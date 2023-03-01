@@ -706,7 +706,8 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             </div>
             <br/>
             <div class="table-responsove">
-                <table class="w-100, m-3">
+               <div id="patient left">
+                    <table width="980px">
                 <tr>
                 <td>
                    <p>Patient Information</p>
@@ -741,6 +742,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         </td>
                     </tr>
                 </table>
+                </div>
             </div>
         </div>
 
