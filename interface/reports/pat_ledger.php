@@ -724,7 +724,10 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         </td>
                       </tr>
                       <tr>
-                        <td>Address goes here</td>
+                        <td>
+                            <?php echo $patient['street'] ?><br>
+                            <?php echo $patient['city'] ?>, <?php echo $patient['state'] ?>, <?php echo $patient['postal_code'] ?><br>
+                        </td>
                         <td>
                             <?php echo xlt('DOB')?>:
                             <?php
@@ -732,7 +735,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                                 <?php echo text($pat_dob);?>
                             <?php } else { ?>
                                 <?php echo text($form_dob); ?>
-                            <?php } ?>
+                            <?php } ?><br>
                             <?php echo xlt('EMAIL')?>:
                             <?php echo text($patient['email']);?>
                         </td>
