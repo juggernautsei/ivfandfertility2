@@ -685,76 +685,50 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
          ?>
         <div id="report_header">
             <div class="table-responsive">
-                <table class="border-0" style="width: 98%">
-                    <tr>
-                        <td class=""><?php echo text($facility['name']); ?></td>
-                    </tr>
-                    <tr>
-                        <td class=""><?php echo text($facility['street']); ?></td>
-                    </tr>
-                    <tr>
-                        <td class=""><?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?></td>
-                    </tr>
-                    <tr>
-                        <td class=""><?php echo xlt('Phone') . ': -' . text($facility['phone']); ?></td>
-                    </tr>
-                    <tr>
-                        <td class=""><?php echo xlt('Tax Id') . ': ' . text($facility['federal_ein']); ?></td>
-                    </tr>
-                    <tr>
-                        <td class=""><?php echo xlt('NPI') . ': ' . text($facility['facility_npi']); ?></td>
-                    </tr>
-                    <!--<tr>
-                        <td class=""><?php echo xlt('Patient Ledger'); ?></td>
-                    </tr>-->
-                    <!--<tr>
+                <div>
+                    <?php echo text($facility['name']); ?><br>
+                    <?php echo text($facility['street']); ?><br>
+                    <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
+                    <?php echo xlt('Phone') . ': -' . text($facility['phone']); ?><br>
+                    <?php echo xlt('Tax Id') . ': ' . text($facility['federal_ein']); ?><br>
+                    <?php echo xlt('NPI') . ': ' . text($facility['facility_npi']); ?><br>
+
                         <?php
                         $title = xl('All Providers');
                         if ($form_provider) {
                             $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
                         }
                         ?>
-                        <td class="title" ><?php echo text($title); ?></td>
-                    </tr>
-                    <tr>
+                        <?php echo text($title); ?>
                         <?php
                         $title = xl('For Dates') . ': ' . oeFormatShortDate($form_from_date) . ' - ' . oeFormatShortDate($form_to_date);
                         ?>
-                        <td class="title"><?php echo text($title); ?></td>
-                    </tr>-->
-                </table>
+                </div>
             </div>
             <br/>
             <div class="table-responsove">
-                <table class="table border-0">
-                    <tr>
-                        <td class='font-weight-bold'><?php echo xlt('Date')?>:
+                <div ></div>
+                    <?php echo xlt('Date')?>:
                             <?php echo text(date('Y-m-d')); ?>
-                        </td>
-                        <td class='font-weight-bold'><?php echo xlt('Patient')?>:
+                        <?php echo xlt('Patient')?>:
                             <?php
                             if ($type_form == '1') { ?>
                                 <?php echo text($pat_name); ?>
                             <?php } else { ?>
                                 <?php echo text($form_patient); ?>
                             <?php } ?>
-                        </td>
-                        <td class='font-weight-bold'><?php echo xlt('DOB')?>:
+                        <?php echo xlt('DOB')?>:
                             <?php
                             if ($type_form == '1') { ?>
                                 <?php echo text($pat_dob);?>
                             <?php } else { ?>
                                 <?php echo text($form_dob); ?>
                             <?php } ?>
-                        </td>
-                        <td class='font-weight-bold'> <?php echo xlt('ID')?>:
+                        <?php echo xlt('ID')?>:
                             <?php echo text($form_pid);?>
-                        </td>
-                        <td class='font-weight-bold'> <?php echo xlt('EMAIL')?>:
+                        <?php echo xlt('EMAIL')?>:
                             <?php echo text($patient['email']);?>
-                        </td>
-                    </tr>
-                </table>
+                </div>
             </div>
         </div>
 
