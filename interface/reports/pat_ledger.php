@@ -690,8 +690,6 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <?php echo text($facility['street']); ?><br>
                     <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
                     <?php echo xlt('Phone') . ': -' . text($facility['phone']); ?><br>
-                    <?php echo xlt('Tax Id') . ': ' . text($facility['federal_ein']); ?><br>
-                    <?php echo xlt('NPI') . ': ' . text($facility['facility_npi']); ?><br>
 
                         <?php
                         if ($form_provider) {
@@ -710,7 +708,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <table width="980px">
                 <tr>
                 <td>
-                   <p>Patient Information</p>
+                   <strong><p>Patient Information</p></strong>
                         <?php echo xlt('Patient')?>:<br>
                             <?php
                             if ($type_form == '1') { ?>
