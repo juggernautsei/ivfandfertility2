@@ -717,19 +717,26 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             <?php } else { ?>
                                 <?php echo text($form_patient); ?>
                                 </td>
-                      </tr>
+                                <td>
+                                <?php echo xlt('ID')?>:
+                            <?php echo text($form_pid);?>
                             <?php } ?>
-                        <?php echo xlt('DOB')?>:
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Address goes here</td>
+                        <td>
+                            <?php echo xlt('DOB')?>:
                             <?php
                             if ($type_form == '1') { ?>
                                 <?php echo text($pat_dob);?>
                             <?php } else { ?>
                                 <?php echo text($form_dob); ?>
                             <?php } ?>
-                        <?php echo xlt('ID')?>:
-                            <?php echo text($form_pid);?>
-                        <?php echo xlt('EMAIL')?>:
+                            <?php echo xlt('EMAIL')?>:
                             <?php echo text($patient['email']);?>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
