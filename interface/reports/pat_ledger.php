@@ -47,7 +47,7 @@ $pat_pid = $_GET['patient_id'] ?? null;
 $type_form = $_GET['form'];
 
 if (! AclMain::aclCheckCore('acct', 'rep')) {
-    echo (new TwigContainer(null, $GLOBALS['kernel']))->getTwig()->render('core/unauthorized.html.twig', ['pageTitle' => xl("Patient Ledger by Date")]);
+    echo (new TwigContainer(null, $GLOBALS['kernel']))->getTwig()->render('core/unauthorized.html.twig', ['pageTitle' => xl("Patient Ledger")]);
     exit;
 }
 
@@ -376,7 +376,7 @@ if ($_REQUEST['form_csvexport']) {
 <html>
 <head>
 
-    <title><?php echo xlt('Patient Ledger by Date'); ?></title>
+    <title><?php echo xlt('Patient Ledger'); ?></title>
 
     <?php Header::setupHeader('datetime-picker'); ?>
 
@@ -694,7 +694,6 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <?php echo xlt('NPI') . ': ' . text($facility['facility_npi']); ?><br>
 
                         <?php
-                        $title = xl('All Providers');
                         if ($form_provider) {
                             $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
                         }
@@ -707,15 +706,18 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             </div>
             <br/>
             <div class="table-responsove">
-                <div ></div>
-                    <?php echo xlt('Date')?>:
-                            <?php echo text(date('Y-m-d')); ?>
-                        <?php echo xlt('Patient')?>:
+                <table class="">
+                <tr>
+                <td>
+                   <p>Patient Information</p>
+                        <?php echo xlt('Patient')?>:<br>
                             <?php
                             if ($type_form == '1') { ?>
                                 <?php echo text($pat_name); ?>
                             <?php } else { ?>
                                 <?php echo text($form_patient); ?>
+                                </td>
+                      </tr>
                             <?php } ?>
                         <?php echo xlt('DOB')?>:
                             <?php
@@ -728,7 +730,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             <?php echo text($form_pid);?>
                         <?php echo xlt('EMAIL')?>:
                             <?php echo text($patient['email']);?>
-                </div>
+                </table>
             </div>
         </div>
 
