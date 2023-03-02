@@ -1011,7 +1011,7 @@ if ($groupid) {
 
     function set_billingFacility() {
         alert('Change!');
-        document.getElementById('facility').value = 5;
+        $("#facility").val("5");
     }
 
     <?php require $GLOBALS['srcdir'] . "/formatting_DateToYYYYMMDD_js.js.php" ?>
