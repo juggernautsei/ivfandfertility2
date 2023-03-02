@@ -355,6 +355,7 @@ $lastWeek = new DateTime(NULL, new DateTimeZone('America/Detroit'));
 $lastWeek = $lastWeek->modify('-1 day')->format('Y-m-d');
 echo $lastWeek;
 $form_from_date = date('Y-m-d', $last_year);
+$form_from_date = $lastWeek;
 if (!empty($_REQUEST['form_from_date'])) {
     $form_from_date = DateToYYYYMMDD($_POST['form_from_date']);
 }
