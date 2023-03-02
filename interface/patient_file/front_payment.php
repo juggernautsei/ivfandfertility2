@@ -1036,7 +1036,7 @@ function make_insurance() {
                             <label class="control-label" for="form_discount"><?php echo xla('Patient Coverage'); ?>:</label>
                             <div class="pl-3">
                                 <label class="radio-inline">
-                                    <input id="radio_type_of_coverage1" name="radio_type_of_coverage" <!--onclick="make_visible_radio();make_self();"--> type="radio" value="self"><?php echo xlt('Self'); ?>
+                                    <input id="radio_type_of_coverage1" name="radio_type_of_coverage"  type="radio" value="self"><?php echo xlt('Self'); ?>
                                 </label>
                                 <label class="radio-inline">
                                     <input checked="checked" id="radio_type_of_coverag2" name="radio_type_of_coverage" onclick="make_hide_radio();make_insurance();" type="radio" value="insurance"><?php echo xlt('Insurance'); ?>
