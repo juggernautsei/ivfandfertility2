@@ -1010,6 +1010,7 @@ if ($groupid) {
 <script>
 
     function set_billingFacility() {
+        alert('Change!');
         document.querySelector('#facility').value = 5;
     }
 
