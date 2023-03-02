@@ -686,27 +686,22 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
          ?>
         <div id="report_header">
             <div class="table-responsive">
-                <div>
+                <div style="float: right">
                     <?php echo text($facility['name']); ?><br>
                     <?php echo text($facility['street']); ?><br>
                     <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
                     <?php echo xlt('Phone') . ': -' . text($facility['phone']); ?><br>
 
+
                         <?php
-                        if ($form_provider) {
-                            $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
-                        }
-                        ?>
-                        <?php echo text($title); ?>
-                        <?php
-                        $title = xl('For Dates') . ': ' . oeFormatShortDate($form_from_date) . ' - ' . oeFormatShortDate($form_to_date);
+                        //$title = xl('For Dates') . ': ' . oeFormatShortDate($form_from_date) . ' - ' . oeFormatShortDate($form_to_date);
                         ?>
                 </div>
             </div>
             <br/>
             <div class="table-responsove">
                <div id="patient left">
-                    <table width="980px">
+                    <table width="980px" cellpadding="10px">
                 <tr>
                 <td>
                    <strong><p>Patient Information</p></strong>
@@ -729,21 +724,26 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             <?php echo $patient['city'] ?>, <?php echo $patient['state'] ?>, <?php echo $patient['postal_code'] ?><br>
                         </td>
                         <td>
-                            <?php echo xlt('DOB')?>:
+                            <strong><?php echo xlt('DOB')?>:</strong>
                             <?php
                             if ($type_form == '1') { ?>
                                 <?php echo text($pat_dob);?>
                             <?php } else { ?>
                                 <?php echo text($form_dob); ?>
                             <?php } ?><br>
-                            <?php echo xlt('EMAIL')?>:
+                            <strong><?php echo xlt('EMAIL')?>:</strong>
                             <?php echo text($patient['email']);?>
                         </td>
                     </tr>
                     <tr>
                         <td>
                         <strong><p>Doctor:</p></strong>
-
+                            <?php
+                        if ($form_provider) {
+                            $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
+                        }
+                        ?>
+                        <?php echo text($title); ?>
 
                         </td>
                         <td>
