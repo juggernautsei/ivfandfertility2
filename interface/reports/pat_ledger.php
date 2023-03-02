@@ -353,9 +353,9 @@ if (substr($GLOBALS['ledger_begin_date'], 0, 1) == 'Y') {
 }
 $lastWeek = new DateTime(NULL, new DateTimeZone('America/Detroit'));
 $lastWeek = $lastWeek->modify('-1 day')->format('Y-m-d');
-echo $lastWeek;
+
 $form_from_date = date('Y-m-d', $last_year);
-$form_from_date = $lastWeek;
+$form_from_date = $lastWeek; //comment this out to put back the year scope
 if (!empty($_REQUEST['form_from_date'])) {
     $form_from_date = DateToYYYYMMDD($_POST['form_from_date']);
 }
@@ -707,7 +707,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 <tr>
                 <td>
                    <strong><p>Patient Information</p></strong>
-                        <?php echo xlt('Patient')?>:<br>
+                        <strong><?php echo xlt('Patient')?>:</strong><br>
                             <?php
                             if ($type_form == '1') { ?>
                                 <?php echo text($pat_name); ?>
@@ -715,7 +715,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                                 <?php echo text($form_patient); ?>
                                 </td>
                                 <td>
-                                <?php echo xlt('ID')?>:
+                                <strong><?php echo xlt('ID')?>:</strong><br>
                             <?php echo text($form_pid);?>
                             <?php } ?>
                         </td>
