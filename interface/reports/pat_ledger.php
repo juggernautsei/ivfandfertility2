@@ -353,8 +353,7 @@ if (substr($GLOBALS['ledger_begin_date'], 0, 1) == 'Y') {
 }
 $lastWeek = new DateTime(NULL, new DateTimeZone('America/Detroit'));
 $lastWeek = $lastWeek->modify('-1 day')->format('Y-m-d');
-//$form_from_date = date('Y-m-d', $last_year);
-$form_from_date = $lastWeek->modify('-1 day')->format('Y-m-d');
+$form_from_date = date('Y-m-d', $last_year);
 if (!empty($_REQUEST['form_from_date'])) {
     $form_from_date = DateToYYYYMMDD($_POST['form_from_date']);
 }
