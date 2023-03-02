@@ -702,12 +702,12 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             </div>
             <br/>
             <div class="table-responsove">
+            <strong><p>Patient Information</p></strong>
                <div id="patient left">
                     <table width="980px" cellpadding="10px">
                 <tr>
                 <td>
-                   <strong><p>Patient Information</p></strong>
-                        <strong><?php echo xlt('Patient')?>:</strong><br>
+                     <strong><?php echo xlt('Patient')?>:</strong><br>
                             <?php
                             if ($type_form == '1') { ?>
                                 <?php echo text($pat_name); ?>
