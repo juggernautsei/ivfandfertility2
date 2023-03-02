@@ -1008,7 +1008,12 @@ if ($groupid) {
 
     ?>
 <script>
-<?php require $GLOBALS['srcdir'] . "/formatting_DateToYYYYMMDD_js.js.php" ?>
+
+    function set_billingFacility() {
+        document.querySelector('#facility').value = 5;
+    }
+
+    <?php require $GLOBALS['srcdir'] . "/formatting_DateToYYYYMMDD_js.js.php" ?>
 
  var mypcc = '<?php echo $GLOBALS['phone_country_code'] ?>';
 
@@ -1444,7 +1449,7 @@ $classpati = '';
 <div class="form-row mx-2">
     <div class="col-sm form-group">
         <label for="facility"><?php echo xlt('Facility'); ?>:</label>
-        <select class="form-control" name="facility" id="facility">
+        <select class="form-control" name="facility" id="facility" onchange="set_billingFacility()">
             <?php
             $facils = getUserFacilities($_SESSION['authUserID']);
             $qsql = sqlStatement("SELECT id, name FROM facility WHERE service_location != 0");
