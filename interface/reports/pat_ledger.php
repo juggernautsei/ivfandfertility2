@@ -81,7 +81,7 @@ function GetAllUnapplied($pat = '', $from_dt = '', $to_dt = '')
     return($all);
 }
 
-function User_Id_Look($thisField)
+function User_Id_Look($thisField):string
 {
     if (!$thisField) {
         return '';
@@ -92,12 +92,12 @@ function User_Id_Look($thisField)
     $rrow = sqlFetchArray($rlist);
     if ($rrow) {
         $ret = $rrow['fname'] . ', ' . $rrow['mname'] . ' ' . $rrow['lname']
-        . "\n UPIN: " . $rrow['upin']
-        . "\n EIN: " . $rrow['federaltaxid']
-        . "\n NPI: " . $rrow['npi'];
+        . "\r\n UPIN: " . $rrow['upin']
+        . "\r\n EIN: " . $rrow['federaltaxid']
+        . "<br> NPI: " . $rrow['npi'];
     }
 
-    return $rrow;
+    return $ret;
 }
 
 function List_Look($thisData, $thisList)
@@ -751,10 +751,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             $title = User_Id_Look(13);
                         }
                         ?>
-                        <?php echo $title['fname'] . ', ' . $title['mname'] . ' ' . $title['lname']
-                                    . "\r\n UPIN: " . $title['upin']
-                                    . "\r\n EIN: " . $title['federaltaxid']
-                                    . "\r\n NPI: " . $title['npi']; ?>
+                        <?php echo text($title); ?>
 
                         </td>
                         <td>
