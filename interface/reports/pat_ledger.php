@@ -747,7 +747,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         if ($form_provider) {
                             $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
                         }
-                        if ($form_facility == 4) {
+                        if ($form_facility == 5) {
                             $title = User_Id_Look(13);
                         }
                         ?>
