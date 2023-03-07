@@ -81,7 +81,7 @@ function GetAllUnapplied($pat = '', $from_dt = '', $to_dt = '')
     return($all);
 }
 
-function User_Id_Look($thisField):string
+function User_Id_Look($thisField):array
 {
     if (!$thisField) {
         return '';
