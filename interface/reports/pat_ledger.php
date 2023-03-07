@@ -746,7 +746,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         }
 
                         ?>
-                        <?php echo text($title); ?>
+                        <?php echo text($title) . $form_facility; ?>
 
                         </td>
                         <td>
