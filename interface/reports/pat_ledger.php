@@ -88,7 +88,7 @@ function User_Id_Look($thisField)
     }
 
     $ret = '';
-    $rlist = sqlStatement("SELECT lname, fname, mname, upin, federaltaxid, npi,  FROM users WHERE id=?", array($thisField));
+    $rlist = sqlStatement("SELECT lname, fname, mname, upin, federaltaxid, npi  FROM users WHERE id = ?", array($thisField));
     $rrow = sqlFetchArray($rlist);
     if ($rrow) {
         $ret = $rrow['fname'] . ', ' . $rrow['mname'] . ' ' . $rrow['lname']
