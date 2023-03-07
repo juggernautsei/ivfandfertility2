@@ -88,10 +88,13 @@ function User_Id_Look($thisField)
     }
 
     $ret = '';
-    $rlist = sqlStatement("SELECT lname, fname, mname FROM users WHERE id=?", array($thisField));
+    $rlist = sqlStatement("SELECT lname, fname, mname, upin, federaltaxid, npi,  FROM users WHERE id=?", array($thisField));
     $rrow = sqlFetchArray($rlist);
     if ($rrow) {
-        $ret = $rrow['lname'] . ', ' . $rrow['fname'] . ' ' . $rrow['mname'];
+        $ret = $rrow['fname'] . ', ' . $rrow['mname'] . ' ' . $rrow['lname']
+        . '<br> UPIN: &nbsp' . $rrow['upin']
+        . '<br> EIN: &nbsp' . $rrow['federaltaxid']
+        . '<br> NPI: &nbsp' . $rrow['npi'];
     }
 
     return $ret;
@@ -745,7 +748,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
                         }
                         if ($form_facility == 4) {
-                            $title = xl('For Provider') . ': ' . User_Id_Look(13);
+                            $title = User_Id_Look(13);
                         }
                         ?>
                         <?php echo text($title); ?>
