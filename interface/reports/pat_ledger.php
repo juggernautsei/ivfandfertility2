@@ -92,9 +92,9 @@ function User_Id_Look($thisField)
     $rrow = sqlFetchArray($rlist);
     if ($rrow) {
         $ret = $rrow['fname'] . ', ' . $rrow['mname'] . ' ' . $rrow['lname']
-        . '<br> UPIN: &nbsp' . $rrow['upin']
-        . '<br> EIN: &nbsp' . $rrow['federaltaxid']
-        . '<br> NPI: &nbsp' . $rrow['npi'];
+        . "\r\n UPIN: &nbsp" . $rrow['upin']
+        . "\r\n EIN: &nbsp" . $rrow['federaltaxid']
+        . "\r\n NPI: &nbsp" . $rrow['npi'];
     }
 
     return $ret;
