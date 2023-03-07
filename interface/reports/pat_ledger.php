@@ -92,9 +92,9 @@ function User_Id_Look($thisField):string
     $rrow = sqlFetchArray($rlist);
     if ($rrow) {
         $ret = $rrow['fname'] . ', ' . $rrow['mname'] . ' ' . $rrow['lname']
-        . "\r\n UPIN: " . $rrow['upin']
-        . "\r\n EIN: " . $rrow['federaltaxid']
-        . "<br> NPI: " . $rrow['npi'];
+        . "\r" . "UPIN: " . $rrow['upin']
+        . "\r" . "EIN: " . $rrow['federaltaxid']
+        . "\r" . "NPI: " . $rrow['npi'];
     }
 
     return $ret;
@@ -751,7 +751,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             $title = User_Id_Look(13);
                         }
                         ?>
-                        <?php echo text($title); ?>
+                        <?php echo $title; ?>
 
                         </td>
                         <td>
