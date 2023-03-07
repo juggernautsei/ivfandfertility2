@@ -750,6 +750,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         if ($form_facility == 5) {
                             $title = User_Id_Look(13);
                         }
+                        if ($form_facility == 4) {
+                            $title = User_Id_Look(12);
+                        }
                         ?>
                         <?php echo nl2br(htmlentities($title)); ?>
 
