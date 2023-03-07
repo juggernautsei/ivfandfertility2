@@ -751,7 +751,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             $title = User_Id_Look(13);
                         }
                         ?>
-                        <?php echo $title; ?>
+                        <?php echo nl2br(htmlentities($title)); ?>
 
                         </td>
                         <td>
