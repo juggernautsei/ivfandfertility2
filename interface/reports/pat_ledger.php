@@ -744,8 +744,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         if ($form_provider) {
                             $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
                         }
+
                         ?>
-                        <?php echo text($title); ?>
+                        <?php echo text($title) . $form_facility; ?>
 
                         </td>
                         <td>
