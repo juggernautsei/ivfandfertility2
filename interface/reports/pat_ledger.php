@@ -779,7 +779,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 <tr>
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
                     <td colspan="2" class='font-weight-bold'><?php echo xlt('Description'); ?></td>
-                    <td class='font-weight-bold'><?php echo xlt('Billed Date'); ?> / <?php echo xlt('Payor'); ?></td>
+                    <!--<td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>-->
                     <td class='font-weight-bold'><?php echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php echo xlt('Units'); ?></td>
                     <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Fees'); ?></td>
@@ -855,14 +855,14 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 $print .= ":" . text($erow['modifier']);
             }
             $print .= "</td>";
-            $print .= "<td class='detail' colspan='2'>" . text($code_desc) . "</td>";
+            $print .= "<td class='detail'>" . text($code_desc) . "</td>";
             $who = ($erow['name'] == '') ? xl('Self') : $erow['name'];
             $bill = substr($erow['bill_date'], 0, 10);
             if ($bill == '') {
                 $bill = 'unbilled';
             }
 
-            $print .= "<td class='detail'>" . text($bill) . "&nbsp;/&nbsp;" . text($who) . "</td>";
+            //$print .= "<td class='detail'>" . text($bill) . "&nbsp;/&nbsp;" . text($who) . "</td>";
             $print .= "<td class='detail text-center'>" . text($erow['units']) . "</td>";
             $print .= "<td class='detail text-center'>" . text(oeFormatMoney($erow['fee'])) . "</td>";
             $print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
