@@ -706,7 +706,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             <br/>
             <div class="table-responsove">
             <hr>
-            <strong><p>Patient Information</p></strong>
+            <strong>Patient Information</strong>
             <hr>
                <div id="patient left">
                     <table width="980px" cellpadding="10px">
@@ -787,16 +787,16 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Adjustment'); ?></td>
                     <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php echo xlt('Balance'); ?></td>
                 </tr>
-                <tr>
+                <!--<tr>
                     <td>&nbsp;&nbsp;&nbsp;</td>
                     <td colspan="2">&nbsp;&nbsp;&nbsp;</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php echo xlt('UAC Appl'); ?></td>
-                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('UAC Tot'); ?></td>
+                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php //echo xlt('UAC Appl'); ?></td>
+                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php //echo xlt('UAC Tot'); ?></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                </tr>
+                </tr>-->
                     <?php
     }
 
