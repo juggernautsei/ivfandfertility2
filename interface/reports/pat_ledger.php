@@ -705,7 +705,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             </div>
             <br/>
             <div class="table-responsove">
+            <hr>
             <strong><p>Patient Information</p></strong>
+            <hr>
                <div id="patient left">
                     <table width="980px" cellpadding="10px">
                 <tr>
@@ -751,7 +753,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             $title = User_Id_Look(13);
                         }
                         if ($form_facility == 4) {
-                            $title = User_Id_Look(99);
+                            $title = User_Id_Look(13);
                         }
                         ?>
                         <?php echo nl2br(htmlentities($title)); ?>
