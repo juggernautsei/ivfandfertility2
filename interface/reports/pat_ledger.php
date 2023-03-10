@@ -171,8 +171,8 @@ function PrintEncFooter()
     echo "<td class='detail text-center'>" . text($enc_units) . "</td>";
     echo "<td class='detail text-center'>" . text(oeFormatMoney($enc_chg)) . "</td>";
     echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_pmt)) . "</td>";
-    echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
-    echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_bal)) . "</td>";
+    //echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
+    //echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_bal)) . "</td>";
     echo "</tr>\n";
 }
 function PrintCreditDetail($detail, $pat, $unassigned = false)
