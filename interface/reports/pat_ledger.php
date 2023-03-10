@@ -901,9 +901,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             PrintCreditDetail($credits, $form_pid);
         }
 
-        if ($hdr_printed) {
+        /*if ($hdr_printed) {
             PrintEncFooter();
-        }
+        }*/
     }
 
 // This is the end of the encounter/charge loop -
