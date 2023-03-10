@@ -833,15 +833,15 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         }
 
         if ($erow['id']) {
-            // Now print an encounter heading line -
-            if (!$hdr_printed) {
+            // Now print an encounter heading line - NOT!
+            /*if (!$hdr_printed) {
                 PrintEncHeader(
                     $erow['date'],
                     $erow['reason'],
                     $erow['provider_id']
                 );
                 $hdr_printed = true;
-            }
+            }*/
 
             $code_desc = $erow['code_text'];
             if (strlen($code_desc) > 50) {
