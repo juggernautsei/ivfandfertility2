@@ -855,7 +855,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 $print .= ":" . text($erow['modifier']);
             }
             $print .= "</td>";
-            $print .= "<td class='detail'>" . text($code_desc) . "</td>";
+            $print .= "<td class='detail' style='width: 100px'>" . text($code_desc) . "</td>";
             $who = ($erow['name'] == '') ? xl('Self') : $erow['name'];
             $bill = substr($erow['bill_date'], 0, 10);
             if ($bill == '') {
