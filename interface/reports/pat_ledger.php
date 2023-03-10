@@ -662,7 +662,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         array_push($sqlBindArray, $form_provider);
     }
 
-    $query .= "AND c.ct_proc = '1' ";
+    //$query .= "AND c.ct_proc = '1' ";
     $query .= "AND activity > 0 ORDER BY fe.date, fe.id ";
     $res = sqlStatement($query, $sqlBindArray);
 
