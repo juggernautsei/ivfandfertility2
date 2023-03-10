@@ -679,7 +679,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         if (!$form_facility) {
             //if facility is blank, select the first one in the table instead of hard coding this number
             $form_facility = sqlQuery("select id from facility");
-            $form_facility = $form_facility['id'];
+            $form_facility = 5; //$form_facility['id'];
         }
 
         $facility = $facilityService->getById($form_facility);
