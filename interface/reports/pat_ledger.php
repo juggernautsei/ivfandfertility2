@@ -692,11 +692,10 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <div id="report_header">
             <div class="table-responsive">
                 <div style="float: right">
-                    <?php echo text("Samuel P. Mayrnick M.D., PA"); ?><br>
-                    <?php echo text("3600 Gaston Ave. Ste. 506"); ?><br>
-                    <?php echo text("Dallas, Texas 75246"); ?><br>
-                    <?php echo xlt('Phone') . ': 217-822-2444'; ?><br>
-
+                    <?php echo text($facility['name']); ?><br>
+                    <?php echo text($facility['street']); ?><br>
+                    <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
+                    <?php echo xlt('Phone') . ': -' . text($facility['phone']); ?><br>
 
                         <?php
                         //$title = xl('For Dates') . ': ' . oeFormatShortDate($form_from_date) . ' - ' . oeFormatShortDate($form_to_date);
@@ -780,7 +779,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
                     <td class='font-weight-bold'><?php echo xlt('Description'); ?></td>
                     <!--<td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>-->
-                    <td class='font-weight-bold'><?php echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td class='font-weight-bold'><?php //echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php echo xlt('Units'); ?></td>
                     <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Fees'); ?></td>
                     <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;<?php //echo xlt('Payment'); ?></td>
@@ -924,8 +923,8 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         echo " <td class='font-weight-bold text-center'>" . text($total_units) . "</td>\n";
         echo " <td class='font-weight-bold text-center'>" . text(oeFormatMoney($total_chg)) . "</td>\n";
         echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_pmt)) . "</td>\n";
-        echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_adj)) . "</td>\n";
-        echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_bal)) . "</td>\n";
+        //echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_adj)) . "</td>\n";
+        //echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_bal)) . "</td>\n";
         echo " </tr>\n";
         ?>
     </table>
