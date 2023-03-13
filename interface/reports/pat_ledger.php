@@ -649,7 +649,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
     "FROM form_encounter AS fe " .
     "LEFT JOIN billing AS b ON b.pid=fe.pid AND b.encounter=fe.encounter " .
     "LEFT JOIN insurance_companies AS ins ON b.payer_id = ins.id " .
-    "LEFT OUTER JOIN code_types AS c ON c.ct_key = b.code_type " .
+    //"LEFT OUTER JOIN code_types AS c ON c.ct_key = b.code_type " .
     "WHERE fe.date >= ? AND fe.date <= ? AND fe.pid = ? ";
     array_push($sqlBindArray, $from_date, $to_date, $form_pid);
     if ($form_facility) {
@@ -662,7 +662,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         array_push($sqlBindArray, $form_provider);
     }
 
-    $query .= "AND c.ct_proc = '1' ";
+    //$query .= "AND c.ct_proc = '1' ";
     $query .= "AND activity > 0 ORDER BY fe.date, fe.id ";
     $res = sqlStatement($query, $sqlBindArray);
 
