@@ -776,7 +776,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <div id="report_results" class="jumbotron py-1">
             <table>
                 <tr>
-                    <td colspan='3'><?php echo xlt('Date'); ?></td>
+                    <td colspan='3'></td>
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
                     <td class='font-weight-bold text-center'><?php echo xlt('Description'); ?></td>
                     <!--<td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>-->
@@ -850,7 +850,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
-            $print .= "<td colspan='3'>$form_from_date</td>"; //date here
+            $print .= "<td colspan='3'></td>"; //date here
             $print .= "<td class='detail'>" . text($erow['code']);
             if ($erow['modifier']) {
                 $print .= ":" . text($erow['modifier']);
