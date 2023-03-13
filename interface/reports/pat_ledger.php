@@ -245,7 +245,7 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
         $print .= "<td class='detail'><strong>" .
         text($pmt_date) . "</strong>&nbsp;&nbsp;</td>"; //. text($payer) . "</td>";
         $type = List_Look($pmt['payment_type'], 'payment_type');
-        $print .= "<td class='detail'>" . text($type) . "&nbsp;</td>";
+        $print .= "<td class='detail'>" . text($type) . "&nbsp; Paid</td>";
         if ($unassigned) {
               $pmt_amt = $pmt['pay_total'] - $pmt['applied'];
               $uac_bal = $pmt_amt * -1;
