@@ -819,7 +819,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         );
                     }
 
-                    PrintCreditDetail($credits, $form_pid);
+                    //Disable display PrintCreditDetail($credits, $form_pid);
                 }
 
                 if ($hdr_printed) {
