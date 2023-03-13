@@ -232,9 +232,8 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
             }
             $description .= '{Pay History}';
         }
-        // original line $print .= "<td class='detail' colspan='2'>" .
-        $print .= "<td class='detail' colspan='2'> &nbsp;</td>" .
-                                      //text($description) . "&nbsp;</td>";
+        $print .= "<td class='detail' colspan='2'>" .
+                                      text($description) . "&nbsp;</td>";
         $payer = ($pmt['name'] == '') ? xl('Patient') : $pmt['name'];
         if ($unassigned) {
               $pmt_date = substr($pmt['post_to_date'], 0, 10);
@@ -242,10 +241,10 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
               $pmt_date = substr($pmt['post_time'], 0, 10);
         }
 
-        $print .= "<td class='detail'><strong>" .
-        text($pmt_date) . "</strong>&nbsp;&nbsp;</td>"; //. text($payer) . "</td>";
+        $print .= "<td class='detail'>" .
+        text($pmt_date) . "&nbsp;/&nbsp;" . text($payer) . "</td>";
         $type = List_Look($pmt['payment_type'], 'payment_type');
-        $print .= "<td class='detail'>" . text($type) . "&nbsp; Paid</td>";
+        $print .= "<td class='detail'>" . text($type) . "&nbsp;</td>";
         if ($unassigned) {
               $pmt_amt = $pmt['pay_total'] - $pmt['applied'];
               $uac_bal = $pmt_amt * -1;
@@ -773,10 +772,11 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <hr>
         </div>
 
-        <div id="report_results" class="jumbotron py-1">
+        <div id="report_results" class="jumbotron py-4">
+
             <table>
                 <tr>
-                    <td colspan='3'></td>
+                    <td></td>
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
                     <td class='font-weight-bold text-center'><?php echo xlt('Description'); ?></td>
                     <!--<td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>-->
@@ -819,7 +819,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         );
                     }
 
-                    //Disable display PrintCreditDetail($credits, $form_pid);
+                    PrintCreditDetail($credits, $form_pid);
                 }
 
                 if ($hdr_printed) {
@@ -850,7 +850,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
-            $print .= "<td colspan='3'></td>"; //date here
+            $print .= "<td>empty</td>";
             $print .= "<td class='detail'>" . text($erow['code']);
             if ($erow['modifier']) {
                 $print .= ":" . text($erow['modifier']);
@@ -866,7 +866,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             //$print .= "<td class='detail'>" . text($bill) . "&nbsp;/&nbsp;" . text($who) . "</td>";
             $print .= "<td class='detail text-center'>" . text($erow['units']) . "</td>";
             $print .= "<td class='detail text-center'>" . text(oeFormatMoney($erow['fee'])) . "</td>";
-            //$print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
+            $print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
             $print .= "</tr>\n";
 
             $total_units  += $erow['units'];
@@ -899,7 +899,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 );
             }
 
-            //display2 PrintCreditDetail($credits, $form_pid); //this removed it from the display
+            PrintCreditDetail($credits, $form_pid);
         }
 
         if ($hdr_printed) {
