@@ -91,7 +91,7 @@ function User_Id_Look($thisField):string
     $rlist = sqlStatement("SELECT lname, fname, mname, upin, federaltaxid, npi  FROM users WHERE id = ?", array($thisField));
     $rrow = sqlFetchArray($rlist);
     if ($rrow) {
-        $ret = $rrow['fname'] . ' ' . $rrow['mname'] . ' ' . $rrow['lname']
+        $ret = $rrow['fname'] . ', ' . $rrow['mname'] . ' ' . $rrow['lname']
         . "\r" . "UPIN: " . $rrow['upin']
         . "\r" . "EIN: " . $rrow['federaltaxid']
         . "\r" . "NPI: " . $rrow['npi'];
@@ -171,8 +171,8 @@ function PrintEncFooter()
     echo "<td class='detail text-center'>" . text($enc_units) . "</td>";
     echo "<td class='detail text-center'>" . text(oeFormatMoney($enc_chg)) . "</td>";
     echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_pmt)) . "</td>";
-    //echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
-    //echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_bal)) . "</td>";
+    echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
+    echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_bal)) . "</td>";
     echo "</tr>\n";
 }
 function PrintCreditDetail($detail, $pat, $unassigned = false)
@@ -279,8 +279,8 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
 
         $print .= "<td class='detail text-center'>" . text($print_appl) . "&nbsp;</td>";
         $print .= "<td class='detail text-right'>" . text($print_pmt) . "&nbsp;</td>";
-        //$print .= "<td class='detail text-right'>" . text($print_adj) . "&nbsp;</td>";
-        //$print .= "<td class='detail text-right'>" . text($print_bal) . "&nbsp;</td>";
+        $print .= "<td class='detail text-right'>" . text($print_adj) . "&nbsp;</td>";
+        $print .= "<td class='detail text-right'>" . text($print_bal) . "&nbsp;</td>";
         $print .= "</tr>\n";
         echo $print;
         if (!empty($pmt['follow_up_note'])) {
@@ -649,7 +649,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
     "FROM form_encounter AS fe " .
     "LEFT JOIN billing AS b ON b.pid=fe.pid AND b.encounter=fe.encounter " .
     "LEFT JOIN insurance_companies AS ins ON b.payer_id = ins.id " .
-    //"LEFT OUTER JOIN code_types AS c ON c.ct_key = b.code_type " .
+    "LEFT OUTER JOIN code_types AS c ON c.ct_key = b.code_type " .
     "WHERE fe.date >= ? AND fe.date <= ? AND fe.pid = ? ";
     array_push($sqlBindArray, $from_date, $to_date, $form_pid);
     if ($form_facility) {
@@ -662,7 +662,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         array_push($sqlBindArray, $form_provider);
     }
 
-    //$query .= "AND c.ct_proc = '1' ";
+    $query .= "AND c.ct_proc = '1' ";
     $query .= "AND activity > 0 ORDER BY fe.date, fe.id ";
     $res = sqlStatement($query, $sqlBindArray);
 
@@ -692,10 +692,11 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <div id="report_header">
             <div class="table-responsive">
                 <div style="float: right">
-                    <?php echo text($facility['name']); ?><br>
-                    <?php echo text($facility['street']); ?><br>
-                    <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
-                    <?php echo xlt('Phone') . ': -' . text($facility['phone']); ?><br>
+                    <?php echo text("Samuel P. Mayrnick M.D., PA"); ?><br>
+                    <?php echo text("3600 Gaston Ave. Ste. 506"); ?><br>
+                    <?php echo text("Dallas, Texas 75246"); ?><br>
+                    <?php echo xlt('Phone') . ': 217-822-2444'; ?><br>
+
 
                         <?php
                         //$title = xl('For Dates') . ': ' . oeFormatShortDate($form_from_date) . ' - ' . oeFormatShortDate($form_to_date);
@@ -776,13 +777,12 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             <table>
                 <tr>
-                    <td></td>
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
-                    <td class='font-weight-bold text-center'><?php echo xlt('Description'); ?></td>
+                    <td class='font-weight-bold'><?php echo xlt('Description'); ?></td>
                     <!--<td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>-->
-                    <td class='font-weight-bold text-center'><?php //echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td class='font-weight-bold'><?php echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php echo xlt('Units'); ?></td>
-                    <td class='font-weight-bold text-center'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Fees'); ?></td>
+                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Fees'); ?></td>
                     <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;<?php //echo xlt('Payment'); ?></td>
                     <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php //echo xlt('Adjustment'); ?></td>
                     <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php //echo xlt('Balance'); ?></td>-->
@@ -850,7 +850,6 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
-            $print .= "<td>empty</td>";
             $print .= "<td class='detail'>" . text($erow['code']);
             if ($erow['modifier']) {
                 $print .= ":" . text($erow['modifier']);
@@ -925,8 +924,8 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         echo " <td class='font-weight-bold text-center'>" . text($total_units) . "</td>\n";
         echo " <td class='font-weight-bold text-center'>" . text(oeFormatMoney($total_chg)) . "</td>\n";
         echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_pmt)) . "</td>\n";
-        //echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_adj)) . "</td>\n";
-        //echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_bal)) . "</td>\n";
+        echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_adj)) . "</td>\n";
+        echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_bal)) . "</td>\n";
         echo " </tr>\n";
         ?>
     </table>
