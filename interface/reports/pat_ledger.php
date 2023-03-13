@@ -777,7 +777,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             <table>
                 <tr>
-                    <td></td>
+                    <td colspan='3'></td>
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
                     <td class='font-weight-bold text-center'><?php echo xlt('Description'); ?></td>
                     <!--<td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>-->
