@@ -232,7 +232,8 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
             }
             $description .= '{Pay History}';
         }
-        $print .= "<td class='detail' colspan='2'>" .
+        // original line $print .= "<td class='detail' colspan='2'>" .
+        $print .= "<td class='detail'>" .
                                       text($description) . "&nbsp;</td>";
         $payer = ($pmt['name'] == '') ? xl('Patient') : $pmt['name'];
         if ($unassigned) {
