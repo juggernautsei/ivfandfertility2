@@ -233,7 +233,7 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
             $description .= '{Pay History}';
         }
         // original line $print .= "<td class='detail' colspan='2'>" .
-        $print .= "<td class='detail' colspan='2'> nbsp;</td>" .
+        $print .= "<td class='detail' colspan='2'> &nbsp;</td>" .
                                       //text($description) . "&nbsp;</td>";
         $payer = ($pmt['name'] == '') ? xl('Patient') : $pmt['name'];
         if ($unassigned) {
@@ -850,7 +850,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
-            $print .= "<td colspan='3'>&nbsp;/&nbsp;</td>";
+            $print .= "<td colspan='3'>&nbsp;&nbsp;</td>";
             $print .= "<td class='detail'>" . text($erow['code']);
             if ($erow['modifier']) {
                 $print .= ":" . text($erow['modifier']);
