@@ -242,8 +242,8 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
               $pmt_date = substr($pmt['post_time'], 0, 10);
         }
 
-        $print .= "<td class='detail'>" .
-        text($pmt_date) . "&nbsp;/&nbsp;" . text($payer) . "</td>";
+        $print .= "<td class='detail'><strong>" .
+        text($pmt_date) . "</strong>&nbsp;&nbsp;</td>"; //. text($payer) . "</td>";
         $type = List_Look($pmt['payment_type'], 'payment_type');
         $print .= "<td class='detail'>" . text($type) . "&nbsp;</td>";
         if ($unassigned) {
@@ -776,7 +776,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <div id="report_results" class="jumbotron py-1">
             <table>
                 <tr>
-                    <td colspan='3'></td>
+                    <td colspan='3'><?php echo xlt('Date'); ?></td>
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
                     <td class='font-weight-bold text-center'><?php echo xlt('Description'); ?></td>
                     <!--<td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>-->
@@ -850,7 +850,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
-            $print .= "<td colspan='3'>&nbsp;&nbsp;</td>";
+            $print .= "<td colspan='3'>$form_from_date</td>"; //date here
             $print .= "<td class='detail'>" . text($erow['code']);
             if ($erow['modifier']) {
                 $print .= ":" . text($erow['modifier']);
@@ -899,7 +899,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 );
             }
 
-            //display2 PrintCreditDetail($credits, $form_pid);
+            //display2 PrintCreditDetail($credits, $form_pid); //this removed it from the display
         }
 
         if ($hdr_printed) {
