@@ -773,8 +773,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <hr>
         </div>
 
-        <div id="report_results" class="jumbotron py-4">
-
+        <div id="report_results" class="jumbotron py-1">
             <table>
                 <tr>
                     <td colspan='3'></td>
