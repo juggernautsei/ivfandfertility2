@@ -157,8 +157,8 @@ function PrintEncHeader($dt, $rsn, $dr)
         $rsn = substr($rsn, 0, 50) . '...';
     }
 
-    //echo "<td colspan='4'><span class='font-weight-bold'>" . xlt('Encounter Dt / Rsn') . ": </span><span class='detail'>" . text(substr($dt, 0, 10)) . " / " . text($rsn) . "</span></td>";
-    //echo "<td colspan='5'><span class='font-weight-bold'>" . xlt('Provider') . ": </span><span class='detail'>" . text(User_Id_Look($dr)) . "</span></td>";
+    echo "<td colspan='4'><span class='font-weight-bold'>" . xlt('Encounter Dt / Rsn') . ": </span><span class='detail'>" . text(substr($dt, 0, 10)) . " / " . text($rsn) . "</span></td>";
+    echo "<td colspan='5'><span class='font-weight-bold'>" . xlt('Provider') . ": </span><span class='detail'>" . text(User_Id_Look($dr)) . "</span></td>";
     echo "</tr>\n";
     $orow++;
 }
@@ -706,7 +706,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             <br/>
             <div class="table-responsove">
             <hr>
-            <strong>Patient Information</strong>
+            <strong><p>Patient Information</p></strong>
             <hr>
                <div id="patient left">
                     <table width="980px" cellpadding="10px">
@@ -768,35 +768,31 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 </table>
                 </div>
             </div>
-        <hr>
-        <strong>Billing Information</strong>
-        <hr>
         </div>
 
         <div id="report_results" class="jumbotron py-4">
-
             <table>
                 <tr>
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
-                    <td class='font-weight-bold'><?php echo xlt('Description'); ?></td>
-                    <!--<td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>-->
+                    <td colspan="2" class='font-weight-bold'><?php echo xlt('Description'); ?></td>
+                    <td class='font-weight-bold'><?php echo xlt('Billed Date'); ?> / <?php echo xlt('Payor'); ?></td>
                     <td class='font-weight-bold'><?php echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php echo xlt('Units'); ?></td>
-                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Fees'); ?></td>
-                    <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;<?php //echo xlt('Payment'); ?></td>
-                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php //echo xlt('Adjustment'); ?></td>
-                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php //echo xlt('Balance'); ?></td>-->
+                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Charge'); ?></td>
+                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;<?php echo xlt('Payment'); ?></td>
+                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Adjustment'); ?></td>
+                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php echo xlt('Balance'); ?></td>
                 </tr>
-                <!--<tr>
+                <tr>
                     <td>&nbsp;&nbsp;&nbsp;</td>
                     <td colspan="2">&nbsp;&nbsp;&nbsp;</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php //echo xlt('UAC Appl'); ?></td>
-                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php //echo xlt('UAC Tot'); ?></td>
+                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php echo xlt('UAC Appl'); ?></td>
+                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('UAC Tot'); ?></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                </tr>-->
+                </tr>
                     <?php
     }
 
@@ -833,20 +829,20 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         }
 
         if ($erow['id']) {
-            // Now print an encounter heading line - NOT!
-            /*if (!$hdr_printed) {
+            // Now print an encounter heading line -
+            if (!$hdr_printed) {
                 PrintEncHeader(
                     $erow['date'],
                     $erow['reason'],
                     $erow['provider_id']
                 );
                 $hdr_printed = true;
-            }*/
+            }
 
             $code_desc = $erow['code_text'];
-            /*if (strlen($code_desc) > 50) {
+            if (strlen($code_desc) > 50) {
                 $code_desc = substr($code_desc, 0, 50) . '...';
-            }*/
+            }
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
@@ -855,14 +851,14 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 $print .= ":" . text($erow['modifier']);
             }
             $print .= "</td>";
-            $print .= "<td class='detail' style='width: 500px'>" . text($code_desc) . "</td>";
+            $print .= "<td class='detail' colspan='2'>" . text($code_desc) . "</td>";
             $who = ($erow['name'] == '') ? xl('Self') : $erow['name'];
             $bill = substr($erow['bill_date'], 0, 10);
             if ($bill == '') {
                 $bill = 'unbilled';
             }
 
-            //$print .= "<td class='detail'>" . text($bill) . "&nbsp;/&nbsp;" . text($who) . "</td>";
+            $print .= "<td class='detail'>" . text($bill) . "&nbsp;/&nbsp;" . text($who) . "</td>";
             $print .= "<td class='detail text-center'>" . text($erow['units']) . "</td>";
             $print .= "<td class='detail text-center'>" . text(oeFormatMoney($erow['fee'])) . "</td>";
             $print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
