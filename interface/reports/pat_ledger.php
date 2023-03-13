@@ -776,12 +776,13 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             <table>
                 <tr>
+                    <td></td>
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
-                    <td class='font-weight-bold'><?php echo xlt('Description'); ?></td>
+                    <td class='font-weight-bold text-center'><?php echo xlt('Description'); ?></td>
                     <!--<td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>-->
-                    <td class='font-weight-bold'><?php //echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td class='font-weight-bold text-center'><?php //echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php echo xlt('Units'); ?></td>
-                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Fees'); ?></td>
+                    <td class='font-weight-bold text-center'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Fees'); ?></td>
                     <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;<?php //echo xlt('Payment'); ?></td>
                     <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php //echo xlt('Adjustment'); ?></td>
                     <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php //echo xlt('Balance'); ?></td>-->
@@ -849,6 +850,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
+            $print .= "<td>empty</td>";
             $print .= "<td class='detail'>" . text($erow['code']);
             if ($erow['modifier']) {
                 $print .= ":" . text($erow['modifier']);
