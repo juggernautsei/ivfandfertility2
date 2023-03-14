@@ -702,7 +702,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <div id="report_header">
             <div class="table-responsive">
                 <div style="float: right">
-                    <?php echo text($facility['name']) . $facility['id']; ?><br>
+                    <?php echo text($facility['name']); ?><br>
                     <?php echo text($facility['street']); ?><br>
                     <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
                     <?php echo xlt('Phone') . ': ' . text($facility['phone']); ?><br>
@@ -754,7 +754,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     </tr>
                     <tr>
                         <td>
-                        <strong><p>Provider:</p></strong>
+                        <strong>Provider:<br></strong>
                             <?php
                         if ($form_provider) {
                             $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
