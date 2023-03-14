@@ -965,7 +965,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                                         <tr>
                                         <td class="title" ><strong><?php echo xlt('Next Appointment Date') . ': ' .
                                          text($next_appoint_date) . ' ' . xlt('Time') . ' ' .
-                                          text($next_appoint_time) . ' ' . xlt('Provider'); ?></strong></td>
+                                          text($next_appoint_time); ?></strong></td>
                                         </tr>
                                         <?php
             }
