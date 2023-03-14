@@ -752,9 +752,11 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         }
                         if ($form_facility == 5) {
                             $title = User_Id_Look(13);
+                            $title .= "Facility NPI: " . $facility['npi'];
                         }
                         if ($form_facility == 4) {
                             $title = User_Id_Look(13);
+                            $title .= "Facility NPI: " . $facility['npi'];
                         }
                         ?>
                         <?php echo nl2br(htmlentities($title)); ?>
