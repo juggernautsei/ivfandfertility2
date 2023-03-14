@@ -776,7 +776,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
                         </td>
                         <td>
-                            <strong><p>Physician Signature:</p></strong>
+                            <strong>Physician Signature:<br></strong>
                             <p>Samuel P. Marynick, M.D.</p>
                             <p><img src="../../public/images/sam_signature.png"> </p>
                         </td>
