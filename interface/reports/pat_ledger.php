@@ -230,8 +230,8 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
             }
             $description .= '{Pay History}';
         }
-        //$print .= "<td class='detail' colspan='2'>" . text($description) . "&nbsp;</td>";
-        $print .= "<td class='detail' colspan='2'>&nbsp;</td>";
+        $print .= "<td class='detail' colspan='2'>" . text($description) . "&nbsp;</td>";
+        //$print .= "<td class='detail' colspan='2'>&nbsp;</td>";
         $payer = ($pmt['name'] == '') ? xl('Patient') : $pmt['name'];
         if ($unassigned) {
               $pmt_date = substr($pmt['post_to_date'], 0, 10);
