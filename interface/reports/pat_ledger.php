@@ -93,8 +93,7 @@ function User_Id_Look($thisField):string
     if ($rrow) {
         $ret = $rrow['fname'] . ', ' . $rrow['mname'] . ' ' . $rrow['lname']
         . "\r" . "UPIN: " . $rrow['upin']
-        . "\r" . "EIN: " . $rrow['federaltaxid']
-        . "\r" . "NPI: " . $rrow['npi'];
+        . "\r" . "EIN: " . $rrow['federaltaxid'];
     }
 
     return $ret;
