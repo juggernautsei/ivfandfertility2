@@ -722,7 +722,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <table width="980px" cellpadding="10px">
                 <tr>
                 <td>
-                     <strong><?php echo xlt('Patient')?>:</strong><br>
+                     <strong><?php echo xlt('Attention Claims Reimbursment')?>:</strong><br>
                             <?php
                             if ($type_form == '1') { ?>
                                 <?php echo text($pat_name); ?>
@@ -764,13 +764,15 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             $title = User_Id_Look(13);
                             $title .= "\r\nEIN: " . $facility['federal_ein'];
                             $title .= "\n\rNPI: " . $facility['facility_npi'];
+                            $title .= "\n\rPlease of Service: 11";
                         }
                         if ($form_facility == 4) {
                             $title = User_Id_Look(13);
                             $title .= "\r\nEIN: " . $facility['federal_ein'];
                             $title .= "\r\nNPI: " . $facility['facility_npi'];
+                            $title .= "\n\rPlease of Service: 49";
                         }
-                        $title .= "\n\rPlease of Service: 49";
+
                         ?>
                         <?php echo nl2br(htmlentities($title)); ?>
 
@@ -785,7 +787,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 </div>
             </div>
             <hr>
-        <strong>Billing Information</strong>
+        <strong>Billing Information</strong><div style="float: right"><strong>REIMBURSE INSURED!</strong></div>
         <hr>
         </div>
 
