@@ -156,7 +156,7 @@ function PrintEncHeader($dt, $rsn, $dr)
 
     echo "<td colspan='4'><span class='font-weight-bold'>" . xlt('Encounter Date / Reason') . ": </span><span class='detail'>" . text(substr($dt, 0, 10)) . " / " . text($rsn) . "</span></td>";
     // Original echo "<td colspan='5'><span class='font-weight-bold'>" . xlt('Provider') . ": </span><span class='detail'>" . text(User_Id_Look($dr)) . "</span></td>";
-    echo "<td colspan='3'><span class='font-weight-bold'></span><span class='detail'></span></td>";
+    echo "<td colspan='5'><span class='font-weight-bold'></span><span class='detail'></span></td>";
     echo "</tr>\n";
     $orow++;
 }
@@ -169,8 +169,8 @@ function PrintEncFooter()
     echo "<td class='detail text-center'>" . text($enc_units) . "</td>";
     echo "<td class='detail text-center'>" . text(oeFormatMoney($enc_chg)) . "</td>";
     echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_pmt)) . "</td>";
-    //echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
-    //echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_bal)) . "</td>";
+    echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
+    echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_bal)) . "</td>";
     echo "</tr>\n";
 }
 function PrintCreditDetail($detail, $pat, $unassigned = false)
@@ -963,8 +963,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                                         <tr>
                                         <td class="title" ><strong><?php echo xlt('Next Appointment Date') . ': ' .
                                          text($next_appoint_date) . ' ' . xlt('Time') . ' ' .
-                                          text($next_appoint_time) . ' ' . xlt('Provider') .
-                                           ' ' . text($next_appoint_provider); ?></strong></td>
+                                          text($next_appoint_time) . ' ' . xlt('Provider'); ?></strong></td>
                                         </tr>
                                         <?php
             }
