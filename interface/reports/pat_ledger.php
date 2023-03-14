@@ -478,7 +478,7 @@ if ($_REQUEST['form_csvexport']) {
     <?php
     if ($type_form == '0') {
         $arrOeUiSettings = array(
-        'heading_title' => xl('Report') . " - " . xl('Patient Ledger'),
+        'heading_title' => xl('Report') . " - " . xl('Statement'),
         'include_patient_name' => false,
         'expandable' => false,
         'expandable_files' => array("patient_ledger_report_xpd"),//all file names need suffix _xpd
@@ -490,7 +490,7 @@ if ($_REQUEST['form_csvexport']) {
         );
     } else {
         $arrOeUiSettings = array(
-        'heading_title' => xl('Patient Ledger'),
+        'heading_title' => xl('Statement'),
         'include_patient_name' => true,
         'expandable' => true,
         'expandable_files' => array("patient_ledger_patient_xpd", "stats_full_patient_xpd", "external_data_patient_xpd"),//all file names need suffix _xpd
