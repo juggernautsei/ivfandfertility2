@@ -693,7 +693,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <?php echo text($facility['name']); ?><br>
                     <?php echo text($facility['street']); ?><br>
                     <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
-                    <?php echo xlt('Phone') . ': -' . text($facility['phone']); ?><br>
+                    <?php echo xlt('Phone') . ': ' . text($facility['phone']); ?><br>
 
 
                         <?php
@@ -949,7 +949,10 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             if (strlen($next_appoint_time) != 0) { ?>
                                         <tr>
-                                        <td class="title" ><?php echo xlt('Next Appointment Date') . ': ' . text($next_appoint_date) . ' ' . xlt('Time') . ' ' . text($next_appoint_time) . ' ' . xlt('Provider') . ' ' . text($next_appoint_provider); ?></td>
+                                        <td class="title" ><strong><?php echo xlt('Next Appointment Date') . ': ' .
+                                         text($next_appoint_date) . ' ' . xlt('Time') . ' ' .
+                                          text($next_appoint_time) . ' ' . xlt('Provider') .
+                                           ' ' . text($next_appoint_provider); ?></strong></td>
                                         </tr>
                                         <?php
             }
