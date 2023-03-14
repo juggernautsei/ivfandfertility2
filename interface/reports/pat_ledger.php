@@ -693,10 +693,10 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <div id="report_header">
             <div class="table-responsive">
                 <div style="float: right">
-                    <?php echo text("Samuel P. Mayrnick M.D., PA"); ?><br>
-                    <?php echo text("3600 Gaston Ave. Ste. 506"); ?><br>
-                    <?php echo text("Dallas, Texas 75246"); ?><br>
-                    <?php echo xlt('Phone') . ': 217-822-2444'; ?><br>
+                    <?php echo text($facility['name']); ?><br>
+                    <?php echo text($facility['street']); ?><br>
+                    <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
+                    <?php echo xlt('Phone') . ': -' . text($facility['phone']); ?><br>
 
 
                         <?php
