@@ -169,8 +169,8 @@ function PrintEncFooter()
     echo "<td class='detail text-center'>" . text($enc_units) . "</td>";
     echo "<td class='detail text-center'>" . text(oeFormatMoney($enc_chg)) . "</td>";
     echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_pmt)) . "</td>";
-    echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
-    echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_bal)) . "</td>";
+    //echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
+    //echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_bal)) . "</td>";
     echo "</tr>\n";
 }
 function PrintCreditDetail($detail, $pat, $unassigned = false)
@@ -927,8 +927,8 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         echo " <td class='font-weight-bold text-center'>" . text($total_units) . "</td>\n";
         echo " <td class='font-weight-bold text-center'>" . text(oeFormatMoney($total_chg)) . "</td>\n";
         echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_pmt)) . "</td>\n";
-        echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_adj)) . "</td>\n";
-        echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_bal)) . "</td>\n";
+        //echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_adj)) . "</td>\n";
+        //echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_bal)) . "</td>\n";
         echo " </tr>\n";
         ?>
     </table>
