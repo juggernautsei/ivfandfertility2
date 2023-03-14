@@ -788,7 +788,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 </div>
             </div>
             <hr>
-        <strong>Billing Information</strong><div style="margin-left: 500px"><strong>REIMBURSE INSURED!</strong></div>
+        <strong>Billing Information</strong><div style="float: right; margin-left: 400px"><strong>REIMBURSE INSURED!</strong></div>
         <hr>
         </div>
 
