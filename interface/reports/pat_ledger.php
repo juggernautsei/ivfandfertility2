@@ -414,6 +414,10 @@ if ($_REQUEST['form_csvexport']) {
                 visibility: hidden;
                 display: none;
             }
+            #questionmark {
+                visibility: hidden;
+                display: none;
+            }
             #report_parameters_daterange {
                 visibility: visible;
                 display: inline;
