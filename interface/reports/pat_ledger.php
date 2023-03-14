@@ -47,7 +47,7 @@ $pat_pid = $_GET['patient_id'] ?? null;
 $type_form = $_GET['form'];
 
 if (! AclMain::aclCheckCore('acct', 'rep')) {
-    echo (new TwigContainer(null, $GLOBALS['kernel']))->getTwig()->render('core/unauthorized.html.twig', ['pageTitle' => xl("Patient Ledger")]);
+    echo (new TwigContainer(null, $GLOBALS['kernel']))->getTwig()->render('core/unauthorized.html.twig', ['pageTitle' => xl("STATEMENT")]);
     exit;
 }
 
@@ -880,7 +880,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             $print .= "<td class='detail'></td>";
             $print .= "<td class='detail text-center'></td>";
             $print .= "<td class='detail text-center'>" . text(oeFormatMoney($erow['fee'])) . "</td>";
-            //$print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
+            $print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
             $print .= "</tr>\n";
 
             $total_units  += $erow['units'];
