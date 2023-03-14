@@ -230,7 +230,7 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
             }
             $description .= '{Pay History}';
         }
-        $print .= "<td class='detail' colspan='2'>" . text($method) . "&nbsp;</td>";
+        $print .= "<td class='detail'>" . text($method) . "&nbsp;</td>";
         //$print .= "<td class='detail' colspan='2'>&nbsp;</td>";
         $payer = ($pmt['name'] == '') ? xl('Patient') : $pmt['name'];
         if ($unassigned) {
@@ -702,7 +702,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <div id="report_header">
             <div class="table-responsive">
                 <div style="float: right">
-                    <?php echo text($facility['name']); ?><br>
+                    <?php echo text($facility['name']) . $facility['id']; ?><br>
                     <?php echo text($facility['street']); ?><br>
                     <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
                     <?php echo xlt('Phone') . ': ' . text($facility['phone']); ?><br>
