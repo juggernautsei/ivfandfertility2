@@ -157,7 +157,7 @@ function PrintEncHeader($dt, $rsn, $dr)
         $rsn = substr($rsn, 0, 50) . '...';
     }
 
-    echo "<td colspan='4'><span class='font-weight-bold'>" . xlt('Encounter Dt / Rsn') . ": </span><span class='detail'>" . text(substr($dt, 0, 10)) . " / " . text($rsn) . "</span></td>";
+    echo "<td colspan='4'><span class='font-weight-bold'>" . xlt('Encounter Date / Reasson') . ": </span><span class='detail'>" . text(substr($dt, 0, 10)) . " / " . text($rsn) . "</span></td>";
     echo "<td colspan='5'><span class='font-weight-bold'>" . xlt('Provider') . ": </span><span class='detail'>" . text(User_Id_Look($dr)) . "</span></td>";
     echo "</tr>\n";
     $orow++;
