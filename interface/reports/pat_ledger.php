@@ -778,7 +778,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         <div id="report_results" class="jumbotron py-4">
             <table>
                 <tr>
-                    <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
+                    <td colspan="2" class='font-weight-bold'><?php echo xlt('Code'); ?></td>
                     <td colspan="2" class='font-weight-bold'><?php echo xlt('Description'); ?></td>
                     <td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?>  <?php //echo xlt('Payor'); ?></td>
                     <td class='font-weight-bold'><?php //echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -793,8 +793,8 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <td colspan="2">&nbsp;&nbsp;&nbsp;</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php echo xlt('UAC Appl'); ?></td>
-                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('UAC Tot'); ?></td>
+                    <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php //echo xlt('UAC Appl'); ?></td>
+                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php //echo xlt('UAC Tot'); ?></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>-->
@@ -851,7 +851,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
-            $print .= "<td class='detail'>" . text($erow['code_type']) . " " . text($erow['code']);
+            $print .= "<td class='detail' colspan='2'>" . text($erow['code_type']) . " " . text($erow['code']);
             if ($erow['modifier']) {
                 $print .= ":" . text($erow['modifier']);
             }
