@@ -769,6 +769,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 </table>
                 </div>
             </div>
+            <hr>
+        <strong>Billing Information</strong>
+        <hr>
         </div>
 
         <div id="report_results" class="jumbotron py-4">
