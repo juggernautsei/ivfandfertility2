@@ -158,7 +158,8 @@ function PrintEncHeader($dt, $rsn, $dr)
     }
 
     echo "<td colspan='4'><span class='font-weight-bold'>" . xlt('Encounter Date / Reason') . ": </span><span class='detail'>" . text(substr($dt, 0, 10)) . " / " . text($rsn) . "</span></td>";
-    //echo "<td colspan='5'><span class='font-weight-bold'>" . xlt('Provider') . ": </span><span class='detail'>" . text(User_Id_Look($dr)) . "</span></td>";
+    // Original echo "<td colspan='5'><span class='font-weight-bold'>" . xlt('Provider') . ": </span><span class='detail'>" . text(User_Id_Look($dr)) . "</span></td>";
+    echo "<td colspan='5'><span class='font-weight-bold'></span><span class='detail'></span></td>";
     echo "</tr>\n";
     $orow++;
 }
