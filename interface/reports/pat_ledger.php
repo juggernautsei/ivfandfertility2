@@ -776,7 +776,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 <tr>
                     <td class='font-weight-bold'><?php echo xlt('Code'); ?></td>
                     <td colspan="2" class='font-weight-bold'><?php echo xlt('Description'); ?></td>
-                    <td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?> / <?php //echo xlt('Payor'); ?></td>
+                    <td class='font-weight-bold'><?php //echo xlt('Billed Date'); ?>  <?php //echo xlt('Payor'); ?></td>
                     <td class='font-weight-bold'><?php //echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php //echo xlt('Units'); ?></td>
                     <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Charge'); ?></td>
@@ -859,8 +859,10 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 $bill = 'unbilled';
             }
 
-            $print .= "<td class='detail'>" . text($bill) . "&nbsp;/&nbsp;" . text($who) . "</td>";
-            $print .= "<td class='detail text-center'>" . text($erow['units']) . "</td>";
+            //original $print .= "<td class='detail'>" . text($bill) . "&nbsp;/&nbsp;" . text($who) . "</td>";
+            //original $print .= "<td class='detail text-center'>" . text($erow['units']) . "</td>";
+            $print .= "<td class='detail'></td>";
+            $print .= "<td class='detail text-center'></td>";
             $print .= "<td class='detail text-center'>" . text(oeFormatMoney($erow['fee'])) . "</td>";
             $print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
             $print .= "</tr>\n";
