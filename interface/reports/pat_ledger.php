@@ -796,9 +796,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <td class='font-weight-bold'><?php //echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php //echo xlt('Units'); ?></td>
                     <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Charge'); ?></td>
-                    <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;<?php //echo xlt('Payment'); ?></td>-->
-                    <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php //echo xlt('Adjustment'); ?></td>-->
-                    <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php echo xlt('Balance'); ?></td>-->
+                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;<?php echo xlt('Payment'); ?></td>
+                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Adjustment'); ?></td>
+                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php echo xlt('Balance'); ?></td>
                 </tr>
                 <!--<tr>
                     <td>&nbsp;&nbsp;&nbsp;</td>
@@ -939,8 +939,8 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         echo " <td class='font-weight-bold text-center'>" . text($total_units) . "</td>\n";
         echo " <td class='font-weight-bold text-center'>" . text(oeFormatMoney($total_chg)) . "</td>\n";
         echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_pmt)) . "</td>\n";
-        //echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_adj)) . "</td>\n";
-        //echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_bal)) . "</td>\n";
+        echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_adj)) . "</td>\n";
+        echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_bal)) . "</td>\n";
         echo " </tr>\n";
         ?>
     </table>
