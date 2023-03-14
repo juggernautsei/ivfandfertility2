@@ -742,7 +742,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     </tr>
                     <tr>
                         <td>
-                        <strong><p>Doctor:</p></strong>
+                        <strong><p>Provider:</p></strong>
                             <?php
                         if ($form_provider) {
                             $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
