@@ -719,7 +719,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             <strong><p>Patient Information</p></strong>
             <hr>
                <div id="patient left">
-                    <table width="980px" cellpadding="10px" border="1">
+                    <table width="980px" cellpadding="10px">
                 <tr>
                 <td>
                      <strong><?php echo xlt('Patient')?>:</strong><br>
