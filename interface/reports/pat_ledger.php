@@ -845,9 +845,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             }
 
             $code_desc = $erow['code_text'];
-            if (strlen($code_desc) > 50) {
+            /*if (strlen($code_desc) > 50) {
                 $code_desc = substr($code_desc, 0, 50) . '...';
-            }
+            }*/
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
