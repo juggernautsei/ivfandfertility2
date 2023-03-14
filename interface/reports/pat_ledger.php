@@ -418,6 +418,14 @@ if ($_REQUEST['form_csvexport']) {
                 visibility: hidden;
                 display: none;
             }
+            #show_hide {
+                visibility: hidden;
+                display: none;
+            }
+            #exp_cont_icon {
+                visibility: hidden;
+                display: none;
+            }
             #report_parameters_daterange {
                 visibility: visible;
                 display: inline;
