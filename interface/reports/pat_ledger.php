@@ -380,7 +380,7 @@ if ($_REQUEST['form_csvexport']) {
 <html>
 <head>
 
-    <title><?php echo xlt('Patient Ledger'); ?></title>
+    <title><?php echo xlt('Statement'); ?></title>
 
     <?php Header::setupHeader('datetime-picker'); ?>
 
