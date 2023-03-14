@@ -478,8 +478,8 @@ if ($_REQUEST['form_csvexport']) {
     <?php
     if ($type_form == '0') {
         $arrOeUiSettings = array(
-        'heading_title' => xl('Report') . " - " . xl('Statement'),
-        'include_patient_name' => false,
+        'heading_title' => xl('Statement'),
+        'include_patient_name' => true,
         'expandable' => false,
         'expandable_files' => array("patient_ledger_report_xpd"),//all file names need suffix _xpd
         'action' => "conceal",//conceal, reveal, search, reset, link or back
