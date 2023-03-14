@@ -92,8 +92,7 @@ function User_Id_Look($thisField):string
     $rrow = sqlFetchArray($rlist);
     if ($rrow) {
         $ret = $rrow['fname'] . ', ' . $rrow['mname'] . ' ' . $rrow['lname']
-        . "\r" . "UPIN: " . $rrow['upin']
-        . "\r" . "EIN: " . $rrow['federaltaxid'];
+        . "\r" . "UPIN: " . $rrow['upin'];
     }
 
     return $ret;
@@ -751,10 +750,12 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         }
                         if ($form_facility == 5) {
                             $title = User_Id_Look(13);
+                            $title .= "\r\nEIN: " . $facility['federal_ein'];
                             $title .= "\n\rNPI: " . $facility['facility_npi'];
                         }
                         if ($form_facility == 4) {
                             $title = User_Id_Look(13);
+                            $title .= "\r\nEIN: " . $facility['federal_ein'];
                             $title .= "\r\nNPI: " . $facility['facility_npi'];
                         }
                         ?>
