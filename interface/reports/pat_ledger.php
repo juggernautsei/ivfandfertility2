@@ -851,7 +851,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
 
             $bgcolor = (($bgcolor == "#FFFFDD") ? "#FFDDDD" : "#FFFFDD");
             $print = "<tr style='background-color:" . attr($bgcolor) . ";'>";
-            $print .= "<td class='detail'>" . text($erow['code']);
+            $print .= "<td class='detail'>" . text($erow['code_type']) . " " . text($erow['code']);
             if ($erow['modifier']) {
                 $print .= ":" . text($erow['modifier']);
             }
