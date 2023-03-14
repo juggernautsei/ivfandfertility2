@@ -166,7 +166,8 @@ function PrintEncFooter()
     echo "<tr style='background-color: var(--gray300)'>";
     echo "<td colspan='3'>&nbsp;</td>";
     echo "<td class='detail'>" . xlt('Encounter Balance') . ":</td>";
-    echo "<td class='detail text-center'>" . text($enc_units) . "</td>";
+    //original echo "<td class='detail text-center'>" . text($enc_units) . "</td>";
+    echo "<td class='detail text-center'></td>";
     echo "<td class='detail text-center'>" . text(oeFormatMoney($enc_chg)) . "</td>";
     echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_pmt)) . "</td>";
     echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
@@ -940,7 +941,8 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
         echo "<tr style='background-color: #DDFFFF;'>\n";
         echo " <td colspan='2'>&nbsp;</td>";
         echo " <td class='font-weight-bold' colspan='2'>" . xlt("Grand Total") . "</td>\n";
-        echo " <td class='font-weight-bold text-center'>" . text($total_units) . "</td>\n";
+        //original echo " <td class='font-weight-bold text-center'>" . text($total_units) . "</td>\n";
+        echo " <td class='font-weight-bold text-center'></td>\n";
         echo " <td class='font-weight-bold text-center'>" . text(oeFormatMoney($total_chg)) . "</td>\n";
         echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_pmt)) . "</td>\n";
         echo " <td class='font-weight-bold text-right'>" . text(oeFormatMoney($total_adj)) . "</td>\n";
