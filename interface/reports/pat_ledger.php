@@ -759,6 +759,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         if ($form_provider) {
                             $title = xl('For Provider') . ': ' . User_Id_Look($form_provider);
                         }
+                        $title = '';
                         if ($form_facility == 5) {
                             $title = User_Id_Look(13);
                             $title .= "\r\nEIN: " . $facility['federal_ein'];
@@ -769,6 +770,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             $title .= "\r\nEIN: " . $facility['federal_ein'];
                             $title .= "\r\nNPI: " . $facility['facility_npi'];
                         }
+                        $title .= "\n\rPlease of Service: 49";
                         ?>
                         <?php echo nl2br(htmlentities($title)); ?>
 
