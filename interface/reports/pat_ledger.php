@@ -784,9 +784,9 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <td class='font-weight-bold'><?php //echo xlt('Type'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php //echo xlt('Units'); ?></td>
                     <td class='font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo xlt('Charge'); ?></td>
-                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;<?php //echo xlt('Payment'); ?></td>
-                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php //echo xlt('Adjustment'); ?></td>
-                    <td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php echo xlt('Balance'); ?></td>
+                    <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;<?php //echo xlt('Payment'); ?></td>-->
+                    <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php //echo xlt('Adjustment'); ?></td>-->
+                    <!--<td class='text-right font-weight-bold'>&nbsp;&nbsp;&nbsp;<?php echo xlt('Balance'); ?></td>-->
                 </tr>
                 <!--<tr>
                     <td>&nbsp;&nbsp;&nbsp;</td>
@@ -868,7 +868,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             $print .= "<td class='detail'></td>";
             $print .= "<td class='detail text-center'></td>";
             $print .= "<td class='detail text-center'>" . text(oeFormatMoney($erow['fee'])) . "</td>";
-            $print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
+            //$print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
             $print .= "</tr>\n";
 
             $total_units  += $erow['units'];
