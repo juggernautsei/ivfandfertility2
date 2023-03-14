@@ -753,7 +753,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                         <strong>Provider:<br></strong>
                             <?php
                         if ($form_provider) {
