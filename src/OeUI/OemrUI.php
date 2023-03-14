@@ -228,7 +228,7 @@ class OemrUI
                 $help_icon_title = xl("To enable help - Go to the User Name on top left > Settings > Features > Enable Help Modal");
             }
             if ($GLOBALS['enable_help'] == 1) {
-                $help_icon = '<a class="oe-pull-away oe-help-redirect" data-target="#myModal" data-toggle="modal" href="#" id="help-href" name="help-href" style="color:#676666" title="' . xla("Click to view Help") . '"><i class="fa fa-question-circle" aria-hidden="true"></i></a>';
+                $help_icon = '<a class="oe-pull-away oe-help-redirect" data-target="#myModal" data-toggle="modal" href="#" id="help-href" name="help-href" style="color:#676666" title="' . xla("Click to view Help") . '"><i id="questionmark" class="fa fa-question-circle" aria-hidden="true"></i></a>';
             } elseif ($GLOBALS['enable_help'] == 2) {
                 $help_icon = '<a class="oe-pull-away oe-help-redirect" data-target="#myModal" data-toggle="modal" href="#" id="help-href" name="help-href" style="color:#DCD6D0 !Important" title="' . attr($help_icon_title) . '"><i class="fa fa-question-circle" aria-hidden="true"></i></a>';
             } elseif ($GLOBALS['enable_help'] == 0) {
