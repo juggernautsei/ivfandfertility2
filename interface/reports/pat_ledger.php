@@ -706,7 +706,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <?php echo text($facility['street']); ?><br>
                     <?php echo text($facility['city']) . ", " . text($facility['state']) . " " . text($facility['postal_code']); ?><br>
                     <?php echo xlt('Phone') . ': ' . text($facility['phone']); ?><br>
-
+                    <?php echo xlt('Fax') . ': ' . text($facility['fax']); ?>
 
                         <?php
                         //$title = xl('For Dates') . ': ' . oeFormatShortDate($form_from_date) . ' - ' . oeFormatShortDate($form_to_date);
