@@ -723,7 +723,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                     <table width="980px" cellpadding="10px">
                 <tr>
                 <td>
-                     <i><strong><?php echo xlt('Attention Claims Reimbursment')?>:</strong></i><br>
+                     <strong><?php echo xlt('Patient')?>:</strong><br>
                             <?php
                             if ($type_form == '1') { ?>
                                 <?php echo text($pat_name); ?>
@@ -778,7 +778,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                         <?php echo nl2br(htmlentities($title)); ?>
 
                         </td>
-                        <td>
+                        <td valign="top">
                             <strong>Physician Signature:<br></strong>
                             <p>Samuel P. Marynick, M.D.
                             <img src="../../public/images/sam_signature.png" width="171" height="33"> </p>
@@ -788,7 +788,8 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                 </div>
             </div>
             <hr>
-            <div style="float: left"><strong>Billing Information</strong></div><div style="margin: auto; text-align: center"><strong>REIMBURSE INSURED!</strong></div>
+            <div style="float: left"><strong>Billing Information</strong></div>
+            <div style="margin: auto; text-align: center"><strong><i>Attention Claims:</i> REIMBURSE INSURED!</strong></div>
         <hr>
         </div>
 
