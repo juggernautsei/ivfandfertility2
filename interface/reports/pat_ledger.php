@@ -765,13 +765,13 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                             $title = User_Id_Look(13);
                             $title .= "\r\nEIN: " . $facility['federal_ein'];
                             $title .= "\n\rNPI: " . $facility['facility_npi'];
-                            $title .= "\n\rPlease of Service: 11";
+                            $title .= "\n\rPlace of Service: 11";
                         }
                         if ($form_facility == 4) {
                             $title = User_Id_Look(13);
                             $title .= "\r\nEIN: " . $facility['federal_ein'];
                             $title .= "\r\nNPI: " . $facility['facility_npi'];
-                            $title .= "\n\rPlease of Service: 49";
+                            $title .= "\n\rPlace of Service: 49";
                         }
 
                         ?>
