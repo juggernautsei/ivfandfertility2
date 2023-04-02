@@ -14,6 +14,7 @@
 
     use OpenEMR\Core\Header;
     use OpenEMR\Escrow\Escrow;
+    use OpenEMR\Menu\PatientMenuRole;
     use OpenEMR\OeUI\OemrUI;
 ?>
 <!doctype html>
@@ -47,6 +48,8 @@
             <div class="col-sm-12">
                 <?php
                     require_once dirname(__FILE__, 3) . "/patient_file/summary/dashboard_header.php";
+                    $menuPatient = new PatientMenuRole();
+                    $menuPatient->displayHorizNavBarMenu();
                 ?>
             </div>
         </div>
