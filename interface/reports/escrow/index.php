@@ -36,7 +36,6 @@
         );
         $oemr_ui = new OemrUI($arrOeUiSettings);
     ?>
-
 </head>
 <body>
     <div id="container_div" class="<?php echo $oemr_ui->oeContainer();?> m-5">
@@ -50,23 +49,24 @@
                 ?>
             </div>
         </div>
-
-        <div id="showescrowpayments" class="row" >
-            <table class="table table-striped">
-                <th><?php echo "Ar Session"?></th>
-                <th><?php echo "Date"?></th>
-                <th><?php echo "Method"?></th>
-                <th><?php echo "Amount"?></th>
-            <?php
-                $showAllPayments = new Escrow();
-                $amounts = $showAllPayments->retrieveAllEscrowPayments();
-                foreach ($amounts as $amount) {
-                    echo "<tr>";
-                    echo "<td>" . $amount['session_id'] . "</td><td>" . $amount['check_date'] . "</td><td>" . $amount['payment_method'] . "</td><td>" . $amount['pay_total'] . "</td>";
-                    echo "</tr>";
-                }
-            ?>
-            </table>
+        <div id="showescrowpayments" class="row mt-3" >
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <th><?php echo "Ar Session"?></th>
+                    <th><?php echo "Date"?></th>
+                    <th><?php echo "Method"?></th>
+                    <th><?php echo "Amount"?></th>
+                <?php
+                    $showAllPayments = new Escrow();
+                    $amounts = $showAllPayments->retrieveAllEscrowPayments();
+                    foreach ($amounts as $amount) {
+                        echo "<tr>";
+                        echo "<td>" . $amount['session_id'] . "</td><td>" . $amount['check_date'] . "</td><td>" . $amount['payment_method'] . "</td><td>" . $amount['pay_total'] . "</td>";
+                        echo "</tr>";
+                    }
+                ?>
+                </table>
+            </div>
         </div>
 
     </div>
