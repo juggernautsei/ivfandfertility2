@@ -10,7 +10,7 @@ namespace OpenEMR\Escrow;
 
     class Escrow
     {
-        public function retrieveAllEscrowPayments()
+        public function retrieveAllEscrowPayments(): array
         {
             $esql = "SELECT `session_id`, `check_date`, `pay_total` FROM `ar_session` WHERE `patient_id` = ?";
             $payments = sqlStatement($esql, [$_SESSION['pid']]);

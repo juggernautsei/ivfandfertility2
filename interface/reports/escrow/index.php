@@ -1,5 +1,7 @@
 <?php
-
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
 /*
  *  @package   OpenEMR
  *  @link      http://www.open-emr.org
@@ -10,7 +12,7 @@
     require_once dirname(__FILE__, 3) . "/globals.php";
 
     use OpenEMR\Core\Header;
-    use OpenEMR\Escrow;
+    use OpenEMR\Escrow\Escrow;
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,7 +29,7 @@
         <h2><?php echo xlt('Escrow Report'); ?></h2>
         <div id="showescrowpayments"  >
             <?php
-                $showAllPayments = new Escrow\Escrow();
+                $showAllPayments = new Escrow();
                 $amounts = $showAllPayments->retrieveAllEscrowPayments();
                 var_dump($amounts);
             ?>

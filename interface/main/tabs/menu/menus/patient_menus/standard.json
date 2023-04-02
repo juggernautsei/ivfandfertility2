@@ -73,7 +73,7 @@
         "requirement": 0
     },
     {
-        "label": "Escro",
+        "label": "Escrow",
         "menu_id": "external_data",
         "target": "main",
         "on_click":"top.restoreSession()",
