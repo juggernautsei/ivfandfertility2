@@ -13,6 +13,7 @@
 
     use OpenEMR\Core\Header;
     use OpenEMR\Escrow\Escrow;
+    use OpenEMR\OeUI\OemrUI;
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,13 +22,35 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php Header::setupHeader(); ?>
     <title><?php echo xlt('Escrow Report') ?></title>
-    <?php echo Header::setupHeader(); ?>
+    <?php
+        $arrOeUiSettings = array(
+            'heading_title' => xl('Escrow'),
+            'include_patient_name' => true,
+            'expandable' => false,
+            'expandable_files' => "",//all file names need suffix _xpd
+            'action' => "",//conceal, reveal, search, reset, link or back
+            'action_title' => "",
+            'action_href' => "",//only for actions - reset, link or back
+            'show_help_icon' => false,
+            'help_file_name' => ""
+        );
+        $oemr_ui = new OemrUI($arrOeUiSettings);
+    ?>
+
 </head>
 <body>
-    <div class="container m-5">
-        <h2><?php echo xlt('Escrow Report'); ?></h2>
-        <div id="showescrowpayments"  >
+    <div id="container_div" class="<?php echo $oemr_ui->oeContainer();?> m-5">
+        <div class="row">
+            <div class="col-sm-12">
+                <?php
+                    require_once("$include_root/patient_file/summary/dashboard_header.php")
+                ?>
+            </div>
+        </div>
+
+        <div id="showescrowpayments" class="row" >
             <?php
                 $showAllPayments = new Escrow();
                 $amounts = $showAllPayments->retrieveAllEscrowPayments();
