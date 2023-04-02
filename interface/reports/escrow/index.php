@@ -48,6 +48,7 @@
             <div class="col-sm-12">
                 <?php
                     require_once dirname(__FILE__, 3) . "/patient_file/summary/dashboard_header.php";
+                    $list_id = "external_data";
                     $menuPatient = new PatientMenuRole();
                     $menuPatient->displayHorizNavBarMenu();
                 ?>
