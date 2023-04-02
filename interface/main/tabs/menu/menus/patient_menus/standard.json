@@ -73,11 +73,11 @@
         "requirement": 0
     },
     {
-        "label": "External Data",
+        "label": "Escro",
         "menu_id": "external_data",
         "target": "main",
         "on_click":"top.restoreSession()",
-        "url": "interface/reports/external_data.php",
+        "url": "interface/reports/escrow",
         "pid":"false",
         "children": [],
         "requirement": 0
