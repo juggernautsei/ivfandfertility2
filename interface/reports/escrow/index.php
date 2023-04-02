@@ -52,11 +52,21 @@
         </div>
 
         <div id="showescrowpayments" class="row" >
+            <table class="table table-striped">
+                <th><?php echo "Ar Session"?></th>
+                <th><?php echo "Date"?></th>
+                <th><?php echo "Method"?></th>
+                <th><?php echo "Amount"?></th>
             <?php
                 $showAllPayments = new Escrow();
                 $amounts = $showAllPayments->retrieveAllEscrowPayments();
-                var_dump($amounts);
+                foreach ($amounts as $amount) {
+                    echo "<tr>";
+                    echo "<td>" . $amount['session_id'] . "</td><td>" . $amount['check_date'] . "</td><td>" . $amount['payment_method'] . "</td><td>" . $amount['pay_total'] . "</td>";
+                    echo "</tr>";
+                }
             ?>
+            </table>
         </div>
 
     </div>
