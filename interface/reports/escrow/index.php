@@ -10,6 +10,7 @@
  */
 
     require_once dirname(__FILE__, 3) . "/globals.php";
+    require_once "Escrow.php";
 
     use OpenEMR\Core\Header;
     use OpenEMR\Escrow\Escrow;
