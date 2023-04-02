@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <?php
-                    require_once("$include_root/patient_file/summary/dashboard_header.php")
+                    require_once("../../../patient_file/summary/dashboard_header.php")
                 ?>
             </div>
         </div>
