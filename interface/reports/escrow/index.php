@@ -69,7 +69,7 @@
                         $sumOfPayments = 0;
                         foreach ($listPayments as $payment) {
                             echo "<tr>";
-                            echo "<td></td><td>" . $payment['post_time'] . "</td><td>" . $payment['encounter'] . "</td><td>" . $payment['pay_amount'] . "</td>";
+                            echo "<td></td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $payment['pay_amount'] . "</td>";
                             echo "</tr>";
                             $sumOfPayments = $sumOfPayments + $payment['pay_amount'];
                         }
