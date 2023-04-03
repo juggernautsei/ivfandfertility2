@@ -66,11 +66,16 @@
 
                         $showAllPayments->arSessionId = $amount['session_id'];
                         $listPayments = $showAllPayments->getEncounterPayments();
+                        $sumOfPayments = 0;
                         foreach ($listPayments as $payment) {
                             echo "<tr>";
                             echo "<td></td><td>" . $payment['post_time'] . "</td><td>" . $payment['encounter'] . "</td><td>" . $payment['pay_amount'] . "</td>";
                             echo "</tr>";
+                            $sumOfPayments = $sumOfPayments + $payment['pay_amount'];
                         }
+                        echo "<tr>";
+                        echo "<td></td><td></td><td></td><td>" . $sumOfPayments . "</td>";
+                        echo "</tr>";
                     }
 
                 ?>
