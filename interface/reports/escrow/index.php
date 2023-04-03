@@ -76,7 +76,7 @@
                         echo "<tr>";
                         echo "<td>" . xlt('Total Payments') . "</td><td></td><td></td><td>" . $sumOfPayments . ".00</td>";
                         echo "</tr>";
-                        $remaining = int($amount['pay_total']) - $sumOfPayments;
+                        $remaining = (int)$amount['pay_total'] - $sumOfPayments;
                         echo "<tr>";
                         echo "<td>" . xlt('Remaining Balance') . "</td><td></td><td></td><td>" . $remaining . ".00</td>";
                         echo "</tr>";
