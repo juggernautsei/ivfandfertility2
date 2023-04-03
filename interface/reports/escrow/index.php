@@ -74,7 +74,7 @@
                             $sumOfPayments = $sumOfPayments + $payment['pay_amount'];
                         }
                         echo "<tr>";
-                        echo "<td></td><td></td><td></td><td>" . $sumOfPayments . "</td>";
+                        echo "<td>" . xlt('Total Payments') . "</td><td></td><td></td><td>" . $sumOfPayments . "</td>";
                         echo "</tr>";
                     }
 
