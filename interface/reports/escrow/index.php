@@ -37,8 +37,8 @@
         $oemr_ui = new OemrUI($arrOeUiSettings);
     ?>
 </head>
-<body data-new-gr-c-s-check-loaded="14.1102.0" >
-    <div id="container_div" class="<?php echo $oemr_ui->oeContainer();?> m-5">
+<body>
+    <div id="container_div" class="<?php echo $oemr_ui->oeContainer();?>">
         <div class="row">
             <div class="col-sm-12">
                 <?php
@@ -49,7 +49,7 @@
                 ?>
             </div>
         </div>
-        <div id="showescrowpayments" class="row" >
+        <div id="showescrowpayments" class="row mt-3" >
             <div class="col-sm-12">
                 <table class="table table-striped">
                     <th><?php echo "Ar Session"?></th>
