@@ -26,7 +26,7 @@
         $arrOeUiSettings = array(
             'heading_title' => xl('Escrow'),
             'include_patient_name' => true,
-            'expandable' => false,
+            'expandable' => true,
             'expandable_files' => "",//all file names need suffix _xpd
             'action' => "",//conceal, reveal, search, reset, link or back
             'action_title' => "",
@@ -37,7 +37,7 @@
         $oemr_ui = new OemrUI($arrOeUiSettings);
     ?>
 </head>
-<body>
+<body data-new-gr-c-s-check-loaded="14.1102.0" >
     <div id="container_div" class="<?php echo $oemr_ui->oeContainer();?> m-5">
         <div class="row">
             <div class="col-sm-12">
@@ -54,7 +54,7 @@
                 <table class="table table-striped">
                     <th><?php echo "Ar Session"?></th>
                     <th><?php echo "Date"?></th>
-                    <th><?php echo "Method"?></th>
+                    <th><?php echo "Method"?>/<?php echo "Encounter"?></th>
                     <th><?php echo "Amount"?></th>
                 <?php
                     $showAllPayments = new Escrow();
@@ -68,7 +68,7 @@
                         $listPayments = $showAllPayments->getEncounterPayments();
                         foreach ($listPayments as $payment) {
                             echo "<tr>";
-                            echo "<td></td><td>" . $payment['post_time'] . "</td><td></td><td>" . $payment['pay_amount'] . "</td>";
+                            echo "<td></td><td>" . $payment['post_time'] . "</td><td>" . $payment['encounter'] . "</td><td>" . $payment['pay_amount'] . "</td>";
                             echo "</tr>";
                         }
                     }
