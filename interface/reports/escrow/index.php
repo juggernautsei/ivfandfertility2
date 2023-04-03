@@ -63,7 +63,12 @@
                         echo "<tr>";
                         echo "<td>" . $amount['session_id'] . "</td><td>" . $amount['check_date'] . "</td><td>" . $amount['payment_method'] . "</td><td>" . $amount['pay_total'] . "</td>";
                         echo "</tr>";
+
+                        $showAllPayments->arSessionId = $amount['session_id'];
+                        $listPayments = $showAllPayments->getEncounterPayments();
+                        var_dump($listPayments);
                     }
+
                 ?>
                 </table>
             </div>
