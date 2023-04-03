@@ -66,7 +66,11 @@
 
                         $showAllPayments->arSessionId = $amount['session_id'];
                         $listPayments = $showAllPayments->getEncounterPayments();
-                        var_dump($listPayments);
+                        foreach ($listPayments as $payment) {
+                            echo "<tr>";
+                            echo "<td></td><td>" . $payment['post_time'] . "</td><td></td><td>" . $amount['pay_amount'] . "</td>";
+                            echo "</tr>";
+                        }
                     }
 
                 ?>

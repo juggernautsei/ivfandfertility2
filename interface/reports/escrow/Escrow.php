@@ -24,7 +24,7 @@ namespace OpenEMR\Escrow;
             return $paymentData;
         }
 
-        public function getEncounterPayments()
+        public function getEncounterPayments(): array
         {
             $encPayments = [];
             $sql = "SELECT `encounter`, `post_time`, `pay_amount` FROM `ar_activity` WHERE
