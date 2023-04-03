@@ -68,7 +68,7 @@
                         $listPayments = $showAllPayments->getEncounterPayments();
                         foreach ($listPayments as $payment) {
                             echo "<tr>";
-                            echo "<td></td><td>" . $payment['post_time'] . "</td><td></td><td>" . $amount['pay_amount'] . "</td>";
+                            echo "<td></td><td>" . $payment['post_time'] . "</td><td></td><td>" . $payment['pay_amount'] . "</td>";
                             echo "</tr>";
                         }
                     }
