@@ -76,7 +76,7 @@
                         $sumOfPayments = 0;
                         $lpayment = 0;
                         $lineAmount = 0;
-                        $i = 0;
+                        $i = 1;
                         foreach ($listPayments as $payment) {
 
                             //if ($lpayment == $payment) {
