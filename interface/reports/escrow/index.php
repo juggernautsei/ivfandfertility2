@@ -89,7 +89,7 @@
                             }
 
                                 $lpayment = $payment;
-                            $sumOfPayments = $sumOfPayments + $lineAmount;
+                           echo $sumOfPayments = $sumOfPayments + $lineAmount;
                         }
                         echo "<tr>";
                         echo "<td>" . xlt('Total Payments') . "</td><td></td><td></td><td>" . $sumOfPayments . ".00</td>";
