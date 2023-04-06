@@ -75,6 +75,8 @@
                         $listPayments = $showAllPayments->getEncounterPayments();
                         $sumOfPayments = 0;
                         $lpayment = 0;
+                        $lineAmount = 0;
+                        $i = 0;
                         foreach ($listPayments as $payment) {
 
                             if ($lpayment == $payment) {
@@ -83,7 +85,7 @@
                             echo "<tr>";
                             echo "<td></td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $lineAmount . "</td>";
                             echo "</tr>";
-
+                            echo $i++;
                             }
 
                                 $lpayment = $payment;
