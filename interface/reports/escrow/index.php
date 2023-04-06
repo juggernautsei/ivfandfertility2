@@ -76,14 +76,14 @@
                         $sumOfPayments = 0;
                         foreach ($listPayments as $payment) {
 
-                            if ($lpayment == $payment) {
-                                echo "<tr><td></td><td></td><td></td><td>" . $lpayment['pay_amount'] + $payment['pay_amount'] . "</td></tr>";
+                            //if ($lpayment == $payment) {
+                              //  echo "<tr><td></td><td></td><td></td><td>" . $lpayment['pay_amount'] + $payment['pay_amount'] . "</td></tr>";
 
-                            }
-                            //echo "<tr>";
-                            //echo "<td></td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $payment['pay_amount'] . "</td>";
-                            //echo "</tr>";
-                                $lpayment = $payment;
+                            //}
+                            echo "<tr>";
+                            echo "<td></td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $payment['pay_amount'] . "</td>";
+                            echo "</tr>";
+                                //$lpayment = $payment;
                             $sumOfPayments = $sumOfPayments + $payment['pay_amount'];
                         }
                         echo "<tr>";
