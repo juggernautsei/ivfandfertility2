@@ -86,6 +86,8 @@
                             echo "<td>" . $i++ . "</td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $lineAmount . "</td>";
                             echo "</tr>";
 
+                            } else {
+                                continue;
                             }
 
                                 $encounter = $payment['encounter'];
