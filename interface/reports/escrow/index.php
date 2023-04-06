@@ -87,9 +87,8 @@
                             echo "</tr>";
                             echo $i++ . "<br>";
                             }
-                            if ($i > 0) {
+
                                 $lpayment = $payment;
-                            }
                            echo $sumOfPayments = $sumOfPayments + $lineAmount . "<br>";
                         }
                         echo "<tr>";
