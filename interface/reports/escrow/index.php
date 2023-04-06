@@ -49,9 +49,10 @@
                 ?>
             </div>
         </div>
+        <button onclick="window.print()">Print this page</button>
         <div id="showescrowpayments" class="row mt-3" >
             <div class="col-sm-12">
-                <button onclick="window.print()">Print this page</button>
+
                 <table class="table table-striped">
                     <th><?php echo "Ar Session"?></th>
                     <th><?php echo "Date"?></th>
