@@ -36,6 +36,11 @@
         );
         $oemr_ui = new OemrUI($arrOeUiSettings);
     ?>
+    <style>
+        @media only print {
+            #demoD { visibility: hidden; }
+        }
+    </style>
 </head>
 <body>
     <div id="container_div" class="<?php echo $oemr_ui->oeContainer();?>">
@@ -49,7 +54,7 @@
                 ?>
             </div>
         </div>
-        <button onclick="window.print()">Print this page</button>
+        <button id="demoD" onclick="window.print()">Print this page</button>
         <div id="showescrowpayments" class="row mt-3" >
             <div class="col-sm-12">
 
