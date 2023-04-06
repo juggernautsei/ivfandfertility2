@@ -79,14 +79,14 @@
                         $i = 1;
                         foreach ($listPayments as $payment) {
 
-                            if ($encounter == $payment['encounter']) {
+                           // if ($encounter == $payment['encounter']) {
                               //  echo "<tr><td></td><td></td><td></td><td>" .  . "</td></tr>";
                                 $lineAmount = $lineAmount + $payment['pay_amount'];
                             echo "<tr>";
                             echo "<td>" . $i++ . " " . $encounter .  "</td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $lineAmount . "</td>";
                             echo "</tr>";
 
-                            }
+                            //}
 
                                 $encounter = $payment['encounter'];
                             if ($i > 1) {
