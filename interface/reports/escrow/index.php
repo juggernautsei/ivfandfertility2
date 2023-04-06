@@ -92,7 +92,7 @@
                            echo $sumOfPayments = $sumOfPayments + $lineAmount . "<br>";
                         }
                         echo "<tr>";
-                        echo "<td>" . xlt('Total Payments') . "</td><td></td><td></td><td>" . $sumOfPayments . ".00</td>";
+                        echo "<td>" . xlt('Total Payments') . "</td><td></td><td></td><td>" . $sumOfPayments - $lpayment . ".00</td>";
                         echo "</tr>";
                         $remaining = (int)$amount['pay_total'] - $sumOfPayments;
                         echo "<tr>";
