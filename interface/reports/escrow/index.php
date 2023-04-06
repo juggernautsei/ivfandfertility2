@@ -77,7 +77,7 @@
                         foreach ($listPayments as $payment) {
 
                             if ($lpayment == $payment) {
-                                echo "<tr><td></td><td></td><td></td><td>$lpayment + $payment</td></tr>";
+                                echo "<tr><td></td><td></td><td></td><td>" . $lpayment['pay_amount'] + $payment['pay_amount'] . "</td></tr>";
 
                             }
                             //echo "<tr>";
