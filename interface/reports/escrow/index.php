@@ -74,6 +74,7 @@
                         $showAllPayments->arSessionId = $amount['session_id'];
                         $listPayments = $showAllPayments->getEncounterPayments();
                         $sumOfPayments = 0;
+                        $lpayment = 0;
                         foreach ($listPayments as $payment) {
 
                             if ($lpayment == $payment) {
