@@ -83,10 +83,10 @@
                               //  echo "<tr><td></td><td></td><td></td><td>" .  . "</td></tr>";
                                 $lineAmount = $lineAmount + $payment['pay_amount'];
 
-                            echo "<tr>";
-                            echo "<td>" . $i++ . " " . $encounter .  "</td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $lineAmount . "</td>";
-                            echo "</tr>";
-                                if ($i = 1) {
+                            //echo "<tr>";
+                            //echo "<td>" . $i++ . " " . $encounter .  "</td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $lineAmount . "</td>";
+                            //echo "</tr>";
+                                if ($i = 2) {
                                     echo $lineAmount;
                                     die;
                                 }
