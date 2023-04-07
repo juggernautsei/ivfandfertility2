@@ -76,17 +76,26 @@
                         $sumOfPayments = 0;
                         $encounter = 0;
                         $lineAmount = 0;
-                        $i = 1;
+                        $i = 0;
                         foreach ($listPayments as $payment) {
 
-                           // if ($encounter == $payment['encounter']) {
+                            if ($encounter == $payment['encounter']) {
                               //  echo "<tr><td></td><td></td><td></td><td>" .  . "</td></tr>";
                                 $lineAmount = $lineAmount + $payment['pay_amount'];
+                                if ($i = 1) {
+                                    echo $lineAmount;
+                                    die;
+                                }
                             echo "<tr>";
                             echo "<td>" . $i++ . " " . $encounter .  "</td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $lineAmount . "</td>";
                             echo "</tr>";
 
-                            //}
+                            } else {
+                                $encounter = $payment['encounter'];
+                                $lineAmount = $lineAmount + $payment['pay_amount'];
+                                $i++;
+                                continue;
+                            }
 
                                 $encounter = $payment['encounter'];
                             if ($i > 1) {
