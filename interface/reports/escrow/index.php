@@ -81,13 +81,9 @@
                         foreach ($encounters as $encounter) {
                             $showAllPayments->encounter = $encounter['encounter'];
                             $paymentsTotals = $showAllPayments->getEncounterPayments();
-                            var_dump($paymentsTotals); die;
-                            //if ($encounter == $payment['encounter']) {
-                              //  echo "<tr><td></td><td></td><td></td><td>" .  . "</td></tr>";
-
-                            //echo "<tr>";
-                            //echo "<td>" . $i++ . " " . $encounter .  "</td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $lineAmount . "</td>";
-                            //echo "</tr>";
+                            echo "<tr>";
+                            echo "<td></td><td>" . substr($paymentsTotals['post_time'], 0, -9) . "</td><td>" . $paymentsTotals['encounter'] . "</td><td>" . $paymentsTotals['pay_amount'] . "</td>";
+                            echo "</tr>";
 
                         }
                         echo "<tr>";
