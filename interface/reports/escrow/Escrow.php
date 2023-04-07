@@ -36,4 +36,15 @@ namespace OpenEMR\Escrow;
             return $encPayments;
         }
 
+        public function getEncounterEntries()
+        {
+            $enc = [];
+            $sql = "SELECT `encounter` FROM `ar_activity` WHERE `session_id` = ? AND `account_code` = 'PP' AND `deleted` IS NULL GROUP BY `encounter`";
+            $listEnc = sqlStatement($sql, [$this->arSessionId]);
+            while ($row = sqlFetchArray($listEnc)) {
+                $enc[] = $row;
+            }
+            return $enc;
+        }
+
     }

@@ -72,6 +72,8 @@
                         echo "</tr>";
 
                         $showAllPayments->arSessionId = $amount['session_id'];
+                        $encounters = $showAllPayments->getEncounterEntries();
+                        var_dump($encounters); die;
                         $listPayments = $showAllPayments->getEncounterPayments();
                         $sumOfPayments = 0;
                         $encounter = 0;
