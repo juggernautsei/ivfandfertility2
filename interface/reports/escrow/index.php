@@ -59,7 +59,7 @@
             <div class="col-sm-12">
 
                 <table class="table table-striped">
-                    <th><?php echo "Ar Session"?></th>
+                    <th><?php echo "Transaction ID"?></th>
                     <th><?php echo "Date"?></th>
                     <th><?php echo "Method"?>/<?php echo "Encounter"?></th>
                     <th><?php echo "Amount"?></th>
