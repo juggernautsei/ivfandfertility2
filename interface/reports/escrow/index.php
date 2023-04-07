@@ -82,7 +82,7 @@
                             $showAllPayments->encounter = $encounter['encounter'];
                             $paymentsTotals = $showAllPayments->getEncounterPayments();
                             echo "<tr>";
-                            echo "<td></td><td>" . substr($paymentsTotals['post_time'], 0, -9) . "</td><td>" . $paymentsTotals['encounter'] . "</td><td>" . $paymentsTotals['pay_amount'] . "</td>";
+                            echo "<td></td><td>" . $paymentsTotals[0]['post_time'] . "</td><td>" . $paymentsTotals[0]['encounter'] . "</td><td>" . $paymentsTotals[0]['pay_amount'] . "</td>";
                             echo "</tr>";
 
                         }
