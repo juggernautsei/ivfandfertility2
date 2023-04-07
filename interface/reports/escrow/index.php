@@ -79,9 +79,9 @@
                         $lineAmount = 0;
                         $i = 0;
                         foreach ($encounters as $encounter) {
-                            var_dump($encounter); die;
-                            $showAllPayments->encounter = $encounter;
+                            $showAllPayments->encounter = $encounter['encounter'];
                             $paymentsTotals = $showAllPayments->getEncounterPayments();
+                            var_dump($paymentsTotals); die;
                             //if ($encounter == $payment['encounter']) {
                               //  echo "<tr><td></td><td></td><td></td><td>" .  . "</td></tr>";
 
