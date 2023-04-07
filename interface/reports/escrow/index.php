@@ -86,7 +86,7 @@
                             //echo "<tr>";
                             //echo "<td>" . $i++ . " " . $encounter .  "</td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $lineAmount . "</td>";
                             //echo "</tr>";
-                                if ($i = 2) {
+                                if ($i == 2) {
                                     echo $lineAmount;
                                     die;
                                 }
