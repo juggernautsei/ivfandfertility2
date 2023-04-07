@@ -73,36 +73,22 @@
 
                         $showAllPayments->arSessionId = $amount['session_id'];
                         $encounters = $showAllPayments->getEncounterEntries();
-                        var_dump($encounters); die;
-                        $listPayments = $showAllPayments->getEncounterPayments();
+                        //$listPayments = $showAllPayments->getEncounterPayments();
                         $sumOfPayments = 0;
                         $encounter = 0;
                         $lineAmount = 0;
                         $i = 0;
-                        foreach ($listPayments as $payment) {
-
-                            if ($encounter == $payment['encounter']) {
+                        foreach ($encounters as $encounter) {
+                            var_dump($encounter); die;
+                            $showAllPayments->encounter = $encounter;
+                            $paymentsTotals = $showAllPayments->getEncounterPayments();
+                            //if ($encounter == $payment['encounter']) {
                               //  echo "<tr><td></td><td></td><td></td><td>" .  . "</td></tr>";
-                                $lineAmount = $lineAmount + $payment['pay_amount'];
 
                             //echo "<tr>";
                             //echo "<td>" . $i++ . " " . $encounter .  "</td><td>" . substr($payment['post_time'], 0, -9) . "</td><td>" . $payment['encounter'] . "</td><td>" . $lineAmount . "</td>";
                             //echo "</tr>";
-                                if ($i == 2) {
-                                    echo $lineAmount;
-                                    die;
-                                }
-                            } else {
-                                $encounter = $payment['encounter'];
-                                $lineAmount = $lineAmount + $payment['pay_amount'];
-                                $i++;
-                                continue;
-                            }
 
-                                $encounter = $payment['encounter'];
-                            if ($i > 1) {
-                                $sumOfPayments = $sumOfPayments + $lineAmount;
-                            }
                         }
                         echo "<tr>";
                         echo "<td>" . xlt('Total Payments') . "</td><td></td><td></td><td>" . $sumOfPayments . ".00</td>";

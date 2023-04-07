@@ -11,6 +11,7 @@ namespace OpenEMR\Escrow;
     class Escrow
     {
         public int $arSessionId;
+        public int $encounter;
         public function retrieveAllEscrowPayments(): array
         {
             $esql = "SELECT `session_id`, `check_date`, `pay_total`, `payment_method` FROM `ar_session` WHERE `patient_id` = ?" .
@@ -27,9 +28,9 @@ namespace OpenEMR\Escrow;
         public function getEncounterPayments(): array
         {
             $encPayments = [];
-            $sql = "SELECT `encounter`, `post_time`, `pay_amount` FROM `ar_activity` WHERE
+            $sql = "SELECT `encounter`, `post_time`, SUM(pay_amount) FROM `ar_activity` WHERE `encounter` = ?
                                 `session_id` = ? AND `account_code` = 'PP' AND `deleted` IS NULL;";
-            $fetchPayments = sqlStatement($sql, [$this->arSessionId]);
+            $fetchPayments = sqlStatement($sql, [$this->encounter, $this->arSessionId]);
             while ($entries = sqlFetchArray($fetchPayments)) {
                 $encPayments[] = $entries;
             }
