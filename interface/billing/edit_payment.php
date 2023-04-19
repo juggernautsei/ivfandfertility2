@@ -367,6 +367,7 @@ $ResultSearchSub = sqlStatement(
     "ORDER BY pid, encounter, code, modifier",
     [$payment_id]
 );
+var_dump($payment_id);
 
 //==============================================================================
 
