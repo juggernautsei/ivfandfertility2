@@ -1036,10 +1036,10 @@ function make_insurance() {
                             <label class="control-label" for="form_discount"><?php echo xla('Patient Coverage'); ?>:</label>
                             <div class="pl-3">
                                 <label class="radio-inline">
-                                    <input id="radio_type_of_coverage1" name="radio_type_of_coverage"  type="radio" value="self"><?php echo xlt('Self'); ?>
+                                    <input checked="checked" id="radio_type_of_coverage1" name="radio_type_of_coverage"  type="radio" value="self"><?php echo xlt('Self'); ?>
                                 </label>
                                 <label class="radio-inline">
-                                    <input checked="checked" id="radio_type_of_coverag2" name="radio_type_of_coverage" onclick="make_hide_radio();make_insurance();" type="radio" value="insurance"><?php echo xlt('Insurance'); ?>
+                                    <input  id="radio_type_of_coverag2" name="radio_type_of_coverage" onclick="make_hide_radio();make_insurance();" type="radio" value="insurance"><?php echo xlt('Insurance'); ?>
                                 </label>
                             </div>
                         </div>
@@ -1052,10 +1052,10 @@ function make_insurance() {
                             </div>
                             <div id="tr_radio2" style="padding-left:15px"><!-- For radio self -->
                                 <label class="radio-inline">
-                                  <input checked="checked" id="radio_type_of_payment1" name="radio_type_of_payment" onclick="make_visible_row();cursor_pointer();" type="radio" value="copay"><?php echo xlt('Co Pay'); ?>
+                                  <input id="radio_type_of_payment1" name="radio_type_of_payment" onclick="make_visible_row();cursor_pointer();" type="radio" value="copay"><?php echo xlt('Co Pay'); ?>
                                 </label>
                                 <label class="radio-inline">
-                                  <input id="radio_type_of_payment2" name="radio_type_of_payment" onclick="make_visible_row();" type="radio" value="invoice_balance"><?php echo xlt('Invoice Balance'); ?><br />
+                                  <input checked="checked" id="radio_type_of_payment2" name="radio_type_of_payment" onclick="make_visible_row();" type="radio" value="invoice_balance"><?php echo xlt('Invoice Balance'); ?><br />
                                 </label>
                                 <label class="radio-inline">
                                   <input id="radio_type_of_payment4" name="radio_type_of_payment" onclick="make_hide_row();" type="radio" value="pre_payment"><?php echo xlt('Pre Pay'); ?>
