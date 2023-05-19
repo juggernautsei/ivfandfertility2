@@ -1038,9 +1038,9 @@ function make_insurance() {
                                 <label class="radio-inline">
                                     <input checked="checked" id="radio_type_of_coverage1" name="radio_type_of_coverage"  type="radio" value="self"><?php echo xlt('Self'); ?>
                                 </label>
-                                <label class="radio-inline">
+                                <!--<label class="radio-inline">
                                     <input  id="radio_type_of_coverag2" name="radio_type_of_coverage" onclick="make_hide_radio();make_insurance();" type="radio" value="insurance"><?php echo xlt('Insurance'); ?>
-                                </label>
+                                </label>-->
                             </div>
                         </div>
                         <div class="col-12 oe-custom-line">
@@ -1051,9 +1051,9 @@ function make_insurance() {
                                 </label>
                             </div>
                             <div id="tr_radio2" style="padding-left:15px"><!-- For radio self -->
-                                <label class="radio-inline">
+                                <!--<label class="radio-inline">
                                   <input id="radio_type_of_payment1" name="radio_type_of_payment" onclick="make_visible_row();cursor_pointer();" type="radio" value="copay"><?php echo xlt('Co Pay'); ?>
-                                </label>
+                                </label>-->
                                 <label class="radio-inline">
                                   <input checked="checked" id="radio_type_of_payment2" name="radio_type_of_payment" onclick="make_visible_row();" type="radio" value="invoice_balance"><?php echo xlt('Invoice Balance'); ?><br />
                                 </label>
