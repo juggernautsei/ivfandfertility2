@@ -280,7 +280,7 @@ function PrintCreditDetail($detail, $pat, $unassigned = false)
         $print .= "<td class='detail text-right'>" . text($print_pmt) . "&nbsp;</td>";
         $print .= "<td class='detail text-right'>" . text($print_adj) . "&nbsp;</td>";
         $print .= "<td class='detail text-right'>" . text($print_bal) . "&nbsp;</td>";
-        $print .= "<td></td>";
+        $print .= "<td>&nbsp;</td>";
         $print .= "</tr>\n";
         echo $print;
         if (!empty($pmt['follow_up_note'])) {

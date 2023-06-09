@@ -26,7 +26,7 @@
         $arrOeUiSettings = array(
             'heading_title' => xl('Escrow'),
             'include_patient_name' => true,
-            'expandable' => true,
+            'expandable' => false,
             'expandable_files' => "",//all file names need suffix _xpd
             'action' => "",//conceal, reveal, search, reset, link or back
             'action_title' => "",
@@ -68,7 +68,8 @@
                     $amounts = $showAllPayments->retrieveAllEscrowPayments();
                     foreach ($amounts as $amount) {
                         echo "<tr>";
-                        echo "<td>" . $amount['session_id'] . "</td><td>" . $amount['check_date'] . "</td><td>" . $amount['payment_method'] . "</td><td>" . $amount['pay_total'] . "</td>";
+                        echo "<td>" . $amount['session_id'] . "</td><td>" . $amount['check_date'] . "</td><td>" .
+                            $amount['payment_method'] . "</td><td>" . $amount['pay_total'] . "</td>";
                         echo "</tr>";
 
                         $showAllPayments->arSessionId = $amount['session_id'];
@@ -82,7 +83,8 @@
                             $showAllPayments->encounter = $encounter['encounter'];
                             $paymentsTotals = $showAllPayments->getEncounterPayments();
                             echo "<tr>";
-                            echo "<td></td><td>" . substr($paymentsTotals[0]['date'], 0, -9) . "</td><td>" . $paymentsTotals[0]['encounter'] . "</td><td>-" . $paymentsTotals[0]['pay_amount'] . "</td>";
+                            echo "<td></td><td>" . substr($paymentsTotals[0]['date'], 0, -9) . "</td><td>" .
+                                $paymentsTotals[0]['encounter'] . "</td><td>-" . $paymentsTotals[0]['pay_amount'] . "</td>";
                             echo "</tr>";
                             $sumOfPayments = $sumOfPayments + $paymentsTotals[0]['pay_amount'];
                         }

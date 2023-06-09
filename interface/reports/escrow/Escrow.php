@@ -29,7 +29,7 @@ namespace OpenEMR\Escrow;
         {
             $encPayments = [];
             $sql = "SELECT ar.encounter, fe.date, SUM(ar.pay_amount) AS pay_amount FROM `ar_activity` AS ar
-                    LEFT JOIN form_encounter fe ON fe.encounter = ar.encounter
+                    LEFT JOIN `form_encounter` fe ON fe.encounter = ar.encounter
                     WHERE ar.encounter = ? AND
                     ar.session_id = ? AND ar.account_code = 'PP' AND ar.deleted IS NULL";
             $fetchPayments = sqlStatement($sql, [$this->encounter, $this->arSessionId]);
