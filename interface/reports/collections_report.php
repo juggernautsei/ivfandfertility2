@@ -751,7 +751,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
     $query = "SELECT f.id, f.date, f.pid, CONCAT(w.lname, ', ', w.fname) AS provider_id, f.encounter, f.last_level_billed, " .
       "f.last_level_closed, f.last_stmt_date, f.stmt_count, f.invoice_refno, " .
       "p.fname, p.mname, p.lname, p.street, p.city, p.state, " .
-      "p.postal_code, p.phone_home, p.ss, p.billing_note, " .
+      "p.postal_code, p.phone_cell, p.ss, p.billing_note, " .
       "p.pubpid, p.DOB, CONCAT(u.lname, ', ', u.fname) AS referrer, " .
       "( SELECT bill_date FROM billing AS b WHERE " .
       "b.pid = f.pid AND b.encounter = f.encounter AND " .
