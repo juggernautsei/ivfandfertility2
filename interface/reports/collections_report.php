@@ -854,7 +854,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
         $row['city']      = $erow['city'];
         $row['state']     = $erow['state'];
         $row['zipcode']   = $erow['postal_code'];
-        $row['phone']     = $erow['phone_home'];
+        $row['phone']     = $erow['phone_cell'];
         $row['duncount']  = $duncount;
         $row['dos']       = $svcdate;
         $row['ss']        = $erow['ss'];
