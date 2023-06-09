@@ -487,10 +487,10 @@ if (!empty($_POST['form_csvexport'])) {
                            <label><input type='checkbox' name='form_cb_pubpid'<?php echo ($form_cb_pubpid) ? ' checked' : ''; ?>>
                             <?php echo xlt('ID') ?>&nbsp;</label>
                         </td>
-                        <td>
+                        <!--<td>
                            <label><input type='checkbox' name='form_cb_policy'<?php echo ($form_cb_policy) ? ' checked' : ''; ?>>
                             <?php echo xlt('Policy') ?>&nbsp;</label>
-                        </td>
+                        </td>-->
                         <td>
                            <label><input type='checkbox' name='form_cb_phone'<?php echo ($form_cb_phone) ? ' checked' : ''; ?>>
                             <?php echo xlt('Phone') ?>&nbsp;</label>
@@ -501,10 +501,10 @@ if (!empty($_POST['form_csvexport'])) {
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <!--<td>
                            <label><input type='checkbox' name='form_cb_ins1'<?php echo ($form_cb_ins1) ? ' checked' : ''; ?>>
                             <?php echo xlt('Primary Ins') ?>&nbsp;</label>
-                        </td>
+                        </td>-->
                         <td>
                            <label><input type='checkbox' name='form_cb_referrer'<?php echo ($form_cb_referrer) ? ' checked' : ''; ?>>
                             <?php echo xlt('Referrer') ?>&nbsp;</label>
