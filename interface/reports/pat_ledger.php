@@ -172,7 +172,6 @@ function PrintEncFooter()
     echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_pmt)) . "</td>";
     echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_adj)) . "</td>";
     echo "<td class='detail text-right'>" . text(oeFormatMoney($enc_bal)) . "</td>";
-    echo "<td>&nbsp;</td>";
     echo "</tr>\n";
 }
 function PrintCreditDetail($detail, $pat, $unassigned = false)
