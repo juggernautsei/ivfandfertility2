@@ -886,7 +886,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
             $print .= "<td class='detail'></td>";
             $print .= "<td class='detail text-center'></td>";
             $print .= "<td class='detail text-center'>" . text(oeFormatMoney($erow['fee'])) . "</td>";
-            $print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
+            $print .= "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
             $print .= "</tr>\n";
 
             $total_units  += $erow['units'];
