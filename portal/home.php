@@ -17,15 +17,16 @@
  */
 
 require_once('verify_session.php');
-require_once("$srcdir/patient.inc");
+require_once("$srcdir/patient.inc.php");
 require_once("$srcdir/options.inc.php");
-require_once('lib/portal_mail.inc');
+require_once('lib/portal_mail.inc.php');
 require_once(__DIR__ . '/../library/appointments.inc.php');
 
 use OpenEMR\Common\Csrf\CsrfUtils;
 use OpenEMR\Common\Twig\TwigContainer;
 use OpenEMR\Events\PatientPortal\RenderEvent;
 use OpenEMR\Events\PatientPortal\AppointmentFilterEvent;
+use OpenEMR\Services\LogoService;
 
 if (isset($_SESSION['register']) && $_SESSION['register'] === true) {
     require_once(__DIR__ . '/../src/Common/Session/SessionUtil.php');
@@ -37,6 +38,9 @@ if (isset($_SESSION['register']) && $_SESSION['register'] === true) {
 if (!isset($_SESSION['portal_init'])) {
     $_SESSION['portal_init'] = true;
 }
+
+$logoService = new LogoService();
+
 
 // Get language definitions for js
 $language = $_SESSION['language_choice'] ?? '1'; // defaults english
@@ -125,6 +129,14 @@ function buildNav($newcnt, $pid, $result)
             'messageCount' => $newcnt ?? 0,
             'children' => [
                 [
+                    'url' => '#quickstart-card',
+                    'id' => 'quickstart_id',
+                    'label' => xl('My Quick Start'),
+                    'icon' => 'fa-tasks',
+                    'dataToggle' => 'collapse',
+                ],
+
+                [
                     'url' => '#profilecard',
                     'label' => xl('My Profile'),
                     'icon' => 'fa-user',
@@ -138,12 +150,12 @@ function buildNav($newcnt, $pid, $result)
                     'dataToggle' => 'collapse',
                     'messageCount' => $newcnt ?? 0,
                 ],
-                [
+                /*[
                     'url' => '#documentscard',
                     'label' => xl('My Documents'),
                     'icon' => 'fa-file-medical',
                     'dataToggle' => 'collapse'
-                ],
+                ],*/
                 [
                     'url' => '#lists',
                     'label' => xl('My Dashboard'),
@@ -281,11 +293,12 @@ $navMenu = buildNav($newcnt, $pid, $result);
 $twig = (new TwigContainer('', $GLOBALS['kernel']))->getTwig();
 echo $twig->render('portal/home.html.twig', [
     'user' => $user,
-    'whereto' => $_SESSION['whereto'] ?? null ?: ($whereto ?? '#documentscard'),
+    'whereto' => $_SESSION['whereto'] ?? null ?: ($whereto ?? '#quickstart-card'),
     'result' => $result,
     'msgs' => $msgs,
     'msgcnt' => $msgcnt,
     'newcnt' => $newcnt,
+    'menuLogo' => $logoService->getLogo('portal/menu/primary'),
     'allow_portal_appointments' => $GLOBALS['allow_portal_appointments'],
     'web_root' => $GLOBALS['web_root'],
     'payment_gateway' => $GLOBALS['payment_gateway'],

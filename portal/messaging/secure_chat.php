@@ -90,7 +90,7 @@ $msgApp = new ChatController();
 <head>
     <meta charset="utf-8" />
     <?php
-    Header::setupHeader(['no_main-theme', 'ckeditor', 'angular', 'angular-sanitize', 'checklist-model']);
+    Header::setupHeader(['no_main-theme',  'portal-theme', 'ckeditor', 'angular', 'angular-sanitize', 'checklist-model']);
     ?>
     <title><?php echo xlt('Secure Chat'); ?></title>
     <meta name="author" content="Jerry Padgett sjpadgett{{at}} gmail {{dot}} com" />
@@ -156,7 +156,7 @@ $msgApp = new ChatController();
             $scope.lastMessageId = null;
             $scope.historyFromId = null;
             $scope.onlines = []; // all online users id and ip's
-            $scope.user = <?php echo $_SESSION['ptName'] ? js_escape($_SESSION['ptName']) : js_escape(ADMIN_USERNAME); ?>;// current user - dashboard user is from session authUserID
+            $scope.user = <?php echo !empty($_SESSION['ptName']) ? js_escape($_SESSION['ptName']) : js_escape(ADMIN_USERNAME); ?>;// current user - dashboard user is from session authUserID
             $scope.userid = <?php echo IS_PORTAL ? js_escape($_SESSION['pid']) : js_escape($_SESSION['authUser']); ?>;
             $scope.isPortal = "<?php echo IS_PORTAL;?>";
             $scope.pusers = []; // selected recipients for chat
@@ -406,7 +406,7 @@ $msgApp = new ChatController();
             };
 
             $scope.renderMessageBody = function (html) {
-                return html;
+                return jsAttr(html);
             };
             $scope.init();
         }]);
