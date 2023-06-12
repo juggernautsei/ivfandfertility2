@@ -237,7 +237,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_orderby'])) {
         "MAX(r.user) AS user, " .
         "p.fname, p.mname, p.lname, p.pubpid " .
         "FROM payments AS r " .
-        "JOIN form_encounter AS fe ON fe.encounter=r.encounter " .
+        //"JOIN form_encounter AS fe ON fe.encounter=r.encounter " .
         "LEFT OUTER JOIN patient_data AS p ON " .
         "p.pid = r.pid " .
         "WHERE " .
