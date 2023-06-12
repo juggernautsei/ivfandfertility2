@@ -253,7 +253,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_orderby'])) {
         }
         $query .= "1 GROUP BY r.dtime, r.pid ORDER BY r.dtime, r.pid";
 
-        //echo " $query \n"; // debugging
+        echo " $query \n"; // debugging
         $res = sqlStatement($query, $inputArray);
 
         while ($row = sqlFetchArray($res)) {
