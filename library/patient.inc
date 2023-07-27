@@ -782,7 +782,7 @@ function getPatientPID($args)
     for ($iter = 0; $row = sqlFetchArray($rez); $iter++) {
         $returnval[$iter] = $row;
     }
-    file_put_contents('/var/www/html/oehr/sites/default/documents/temp/headdobname.txt', $returnval);
+    file_put_contents('/var/www/html/oehr/sites/default/documents/temp/headdobname.txt', print_r($returnval, true));
     return $returnval;
 }
 
