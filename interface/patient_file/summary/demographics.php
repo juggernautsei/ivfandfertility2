@@ -313,7 +313,7 @@ if (!empty($result3['provider'])) {   // Use provider in case there is an ins re
 }
 
 $arrOeUiSettings = array(
-    'heading_title' => xl('Medical Record Dashboards'),
+    'heading_title' => xl('Medical Record Dashboard'),
     'include_patient_name' => true,
     'expandable' => false,
     'expandable_files' => array(), //all file names need suffix _xpd
