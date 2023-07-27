@@ -835,8 +835,10 @@ function getPatientFullNameAsString($pid): string
 
     $name .= " {$pt['lname']}";
 
-    if ($pt['suffix']) {
-        //$name .= " {$pt['suffix']}";
+    $isAdate = strtotime($pt['suffix']);
+
+    if ($pt['suffix'] && !$isAdate) {
+        $name .= " {$pt['suffix']}";
     }
 
     return $name;
