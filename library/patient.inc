@@ -782,7 +782,7 @@ function getPatientPID($args)
     for ($iter = 0; $row = sqlFetchArray($rez); $iter++) {
         $returnval[$iter] = $row;
     }
-
+    file_put_contents('/var/www/html/oehr/sites/default/documents/temp/headdobname.txt', $returnval);
     return $returnval;
 }
 
@@ -838,7 +838,7 @@ function getPatientFullNameAsString($pid): string
     if ($pt['suffix']) {
         $name .= " {$pt['suffix']}";
     }
-    file_put_contents('/var/www/html/oehr/sites/default/documents/temp/headdob.txt', $name);
+
     return $name;
 }
 
