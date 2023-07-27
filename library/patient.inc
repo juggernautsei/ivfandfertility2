@@ -838,7 +838,7 @@ function getPatientFullNameAsString($pid): string
     if ($pt['suffix']) {
         $name .= " {$pt['suffix']}";
     }
-
+    file_put_contents('/var/www/html/oehr/sites/default/documents/temp/headdob.txt', $name);
     return $name;
 }
 

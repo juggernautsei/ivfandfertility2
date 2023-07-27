@@ -93,7 +93,6 @@ class OemrUI
     */
     public function pageHeading()
     {
-        file_put_contents('/var/www/html/oehr/sites/default/documents/temp/head.txt', $this->heading);
         $heading = text($this->heading);
         if (!empty($heading)) {
             $arrexpandIcon = $this->expandIcon();// returns and array containing expandable icon string and container class string
