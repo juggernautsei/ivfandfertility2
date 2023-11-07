@@ -60,7 +60,6 @@ $N = 15;
 $M = 15;
 
 $mode   = $_REQUEST['mode'] ?? null;
-var_dump($mode);
 $offset = $_REQUEST['offset'] ?? null;
 $offset_sent = $_REQUEST['offset_sent'] ?? null;
 $form_active = $_REQUEST['form_active'] ?? null;
@@ -153,6 +152,7 @@ if (isset($mode)) {
         $noteid = '';
     } elseif ($mode == "delete") {
         if ($noteid) {
+            var_dump($noteid) . " Note ID";
             deletePnote($noteid);
             EventAuditLogger::instance()->newEvent("delete", $_SESSION['authUser'], $_SESSION['authProvider'], 1, "pnotes: id " . $noteid);
         }
