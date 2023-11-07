@@ -60,6 +60,7 @@ $N = 15;
 $M = 15;
 
 $mode   = $_REQUEST['mode'] ?? null;
+var_dump($mode);
 $offset = $_REQUEST['offset'] ?? null;
 $offset_sent = $_REQUEST['offset_sent'] ?? null;
 $form_active = $_REQUEST['form_active'] ?? null;
