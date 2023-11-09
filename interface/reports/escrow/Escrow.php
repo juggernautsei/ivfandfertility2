@@ -27,7 +27,7 @@ namespace OpenEMR\Escrow;
 
         public function getRefund()
         {
-            $rsql = "SELECT session_id, reference, check_date, pay_total FROM `ar_session` WHERE patient_id = ? AND adjustment_code = 'refund'";
+            $rsql = "SELECT session_id, reference, check_date, pay_total FROM `ar_session` WHERE patient_id = ? AND adjustment_code = 'refund_balance'";
             return sqlQuery($rsql, [$_SESSION['pid']]);
         }
 
