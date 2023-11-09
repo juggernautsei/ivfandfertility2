@@ -96,7 +96,7 @@
                         if ($refund) {
                             echo "<tr>";
                             echo "<td>" . xlt('Refund') . "</td><td>" . $refund['check_date'] . "</td><td>" .
-                                $refund['reference'] . "</td><td>" . $refund[0]['pay_total'] . "</td>";
+                                $refund['reference'] . "</td><td>" . $refund['pay_total'] . "</td>";
                             echo "</tr>";
 
                         }
