@@ -103,7 +103,7 @@
                         echo $lessRefund = (int)$refund['pay_total'];
                         $remaining = (int)$amount['pay_total'] - $sumOfPayments;
                         echo "<tr>";
-                        echo "<td>" . xlt('Remaining Balance') . "</td><td></td><td></td><td>" . $remaining . ".00</td>";
+                        echo "<td>" . xlt('Remaining Balance') . "</td><td></td><td></td><td>" . ($lessRefund + $remaining) . ".00</td>";
                         echo "</tr>";
                     }
 
