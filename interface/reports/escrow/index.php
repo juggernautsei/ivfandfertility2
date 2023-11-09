@@ -96,7 +96,7 @@
                         echo "<td>" . xlt('Remaining Balance') . "</td><td></td><td></td><td>" . $remaining . ".00</td>";
                         echo "</tr>";
                     }
-
+                        var_dump($showAllPayments->getRefund());
                 ?>
                 </table>
             </div>

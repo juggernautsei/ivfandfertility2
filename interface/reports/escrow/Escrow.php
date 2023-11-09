@@ -15,7 +15,7 @@ namespace OpenEMR\Escrow;
         public function retrieveAllEscrowPayments(): array
         {
             $esql = "SELECT `session_id`, `check_date`, `pay_total`, `payment_method` FROM `ar_session` WHERE `patient_id` = ?" .
-                " AND adjustment_code = ? OR adjustment_code = 'refund'";
+                " AND adjustment_code = ?";
             $payments = sqlStatement($esql, [$_SESSION['pid'], 'pre_payment']);
             $paymentData = [];
             while ($escrowamounts = sqlFetchArray($payments))
@@ -23,6 +23,12 @@ namespace OpenEMR\Escrow;
                 $paymentData[] = $escrowamounts;
             }
             return $paymentData;
+        }
+
+        public function getRefund()
+        {
+            $rsql = "SELECT session_id, check_date, pay_total FROM `ar_session` WHERE patient_id = ? AND adjustment_code = 'refund'";
+            return sqlQuery($rsql, [$_SESSION['pid']]);
         }
 
         public function getEncounterPayments(): array
