@@ -95,7 +95,7 @@
                         $refund = $showAllPayments->getRefund();
                         if ($refund) {
                             echo "<tr>";
-                            echo "<td>" . xlt('Refund') . "</td><td>" . $refund['check_date'] . "</td><td>" .
+                            echo "<td>" . xlt('Refund') . "</td><td>" . $refund['check_date'] . "</td><td> Check: " .
                                 $refund['reference'] . "</td><td>" . $refund['pay_total'] . "</td>";
                             echo "</tr>";
 
