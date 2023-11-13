@@ -54,8 +54,14 @@
                 ?>
             </div>
         </div>
-        <button class="btn btn-primary mt-3" id="demoD" onclick="window.print()"><?php echo xlt('Print this page'); ?></button>
-        <button class="btn btn-primary mt-3" id="refund" onclick=""><?php echo xlt('Refund'); ?></button>
+        <div class="row">
+            <div class="col-sm-6">
+                <button class="btn btn-primary mt-3" id="demoD" onclick="window.print()"><?php echo xlt('Print this page'); ?></button>
+            </div>
+            <div class="col-sm-6">
+                <button class="btn btn-primary mt-3" id="refund" onclick=""><?php echo xlt('Refund'); ?></button>
+            </div>
+        </div>
         <div id="showescrowpayments" class="row mt-3" >
             <div class="col-sm-12">
 
