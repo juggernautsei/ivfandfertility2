@@ -118,13 +118,12 @@
     $refund = document.getElementById('refund');
     $refund.addEventListener('click', function () {
         let url = '<?php echo $GLOBALS['webroot'] . '/interface/reports/escrow/refund.php'?>';
-        dlgopen(url, '_blank', 'modal-sm', 250, '', '', {
+        dlgopen(url, '_blank', 'modal-sm', 290, '', '', {
             allowDrag: true,
             allowResize: true,
             buttons: [
                 {text: xl('Cancel'), close: false, id: "closeBtn", style: 'secondary btn-cancel'}
             ],
-            onClosed: 'reload'
         });
     });
 </script>
