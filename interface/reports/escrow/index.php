@@ -118,7 +118,7 @@
     $refund = document.getElementById('refund');
     $refund.addEventListener('click', function () {
         let url = 'refund.php';
-        dlgopen(url, 'pop-profile', '', 450, 125, '', {
+        dlgopen(url, 'pop-profile', '', 200, 325, '', {
             allowDrag: true,
             allowResize: true,
             buttons: [
