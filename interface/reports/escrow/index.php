@@ -121,7 +121,10 @@
         dlgopen(url, 'pop-profile', 'modal-sm', 450, '', '', {
             allowDrag: true,
             allowResize: true,
-            sizeHeight: 'full',
+            buttons: [
+                {text: xl('Cancel'), close: false, id: "closeBtn", style: 'secondary btn-cancel'}
+            ],
+            onClosed: 'reload'
         });
     });
 </script>
