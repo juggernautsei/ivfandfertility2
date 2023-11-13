@@ -115,6 +115,9 @@
 
     </div>
 <script>
+    function refreshme() {
+        location.reload();
+    }
     $refund = document.getElementById('refund');
     $refund.addEventListener('click', function () {
         let url = '<?php echo $GLOBALS['webroot'] . '/interface/reports/escrow/refund.php'?>';
@@ -122,9 +125,8 @@
             buttons: [
                 {text: <?php echo xlj('Close'); ?>, close: true, style: 'default btn-sm'}
             ],
-        }).then(() => {
-            location.reload();
-        })
+            onClosed: 'refreshme'
+        });
     });
 </script>
 </body>
