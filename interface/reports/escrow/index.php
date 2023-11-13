@@ -117,9 +117,10 @@
 <script>
     $refund = document.getElementById('refund');
     $refund.addEventListener('click', function () {
-        let url = 'refund.php';
-        dlgopen(url, 'pop-profile', '', 600, 625, '', {
-
+        let url = '<?php echo $GLOBALS['webroot'] . '/interface/reports/escrow/refund.php'?>';
+        dlgopen(url, 'pop-profile', 'modal-sm', 450, '', '', {
+            allowDrag: true,
+            allowResize: true,
             buttons: [
                 {text: xl('Cancel'), close: false, id: "closeBtn", style: 'secondary btn-cancel'}
             ],
