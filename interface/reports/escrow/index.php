@@ -54,7 +54,8 @@
                 ?>
             </div>
         </div>
-        <button id="demoD" onclick="window.print()">Print this page</button>
+        <button class="btn btn-primary mt-3" id="demoD" onclick="window.print()"><?php echo xlt('Print this page'); ?></button>
+        <button class="btn btn-primary mt-3" id="refund" onclick=""><?php echo xlt('Refund'); ?></button>
         <div id="showescrowpayments" class="row mt-3" >
             <div class="col-sm-12">
 
@@ -113,6 +114,12 @@
         </div>
 
     </div>
+<script>
+    $refund = document.getElementById('refund');
+    $refund.addEventListener('click', function () {
+        window.location.href = 'refund.php';
+    });
+</script>
 </body>
 </html>
 
