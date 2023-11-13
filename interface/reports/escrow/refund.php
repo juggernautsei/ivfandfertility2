@@ -6,7 +6,7 @@
  *  @author    Sherwin Gaddis <sherwingaddis@gmail.com>
  * Copyright (c) 2023.
  */
-
+require_once dirname(__FILE__, 3) . "/globals.php";
 
 ?>
 <!doctype html>
