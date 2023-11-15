@@ -740,7 +740,7 @@ if ($_REQUEST['form_refresh'] || $_REQUEST['form_csvexport']) {
                       <tr>
                         <td>
                             <?php echo $patient['street'] ?><br>
-                            <?php echo $patient['city'] ?>, <?php echo $patient['state'] ?>, <?php echo $patient['postal_code'] ?><br>
+                            <?php echo $patient['city'] ?>, <?php echo $patient['state'] ?> <?php echo $patient['postal_code'] ?><br>
                         </td>
                         <td>
                             <strong><?php echo xlt('DOB')?>:</strong>
