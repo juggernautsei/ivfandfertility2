@@ -16,6 +16,10 @@
     use OpenEMR\Escrow\Escrow;
     use OpenEMR\Menu\PatientMenuRole;
     use OpenEMR\OeUI\OemrUI;
+
+$showAllPayments = new Escrow();
+$refund = $showAllPayments->getRefund();
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -71,7 +75,6 @@
                     <th><?php echo "Method"?>/<?php echo "Encounter"?></th>
                     <th><?php echo "Amount"?></th>
                 <?php
-                    $showAllPayments = new Escrow();
                     $amounts = $showAllPayments->retrieveAllEscrowPayments();
                     foreach ($amounts as $amount) {
                         echo "<tr>";
@@ -81,7 +84,6 @@
 
                         $showAllPayments->arSessionId = $amount['session_id'];
                         $encounters = $showAllPayments->getEncounterEntries();
-                        //$listPayments = $showAllPayments->getEncounterPayments();
                         $sumOfPayments = 0;
                         $encounter = 0;
                         $lineAmount = 0;
@@ -99,7 +101,6 @@
                         echo "<td>" . xlt('Total Payments') . "</td><td></td><td></td><td>-" . $sumOfPayments . ".00</td>";
                         echo "</tr>";
                         //refund segment
-                        $refund = $showAllPayments->getRefund();
                         if ($refund) {
                             echo "<tr>";
                             echo "<td>" . xlt('Refund') . "</td><td>" . $refund['check_date'] . "</td><td> Check: " .
