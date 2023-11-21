@@ -52,7 +52,7 @@ if ((isset($_POST['checkno']) && isset($_POST['amount']) && (!empty($_POST['chec
 </div>
 <script>
     $(function() {
-        $('.datepicker').datetimepicker({
+        $('#datepicker').datetimepicker({
             <?php $datetimepicker_timepicker = false; ?>
             <?php $datetimepicker_showseconds = false; ?>
             <?php $datetimepicker_formatInput = true; ?>
