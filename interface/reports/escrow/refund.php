@@ -22,7 +22,7 @@ if ((isset($_POST['checkno']) && isset($_POST['amount']) && (!empty($_POST['chec
     $response = $setEscrowRefundValues->enterRefundedAmount();
     if ($response == 'success') {
         echo "<script>alert('Refund Successful')</script>";
-        die('<script>window.location.href = "index.php";</script>');
+        die;
     } else {
         echo "<script>" . $response . "</script>";
     }
