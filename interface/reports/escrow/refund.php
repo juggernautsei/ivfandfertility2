@@ -15,9 +15,17 @@ use OpenEMR\Escrow\Escrow;
 $setEscrowRefundValues = new Escrow();
 
 if ((isset($_POST['checkno']) && isset($_POST['amount']) && (!empty($_POST['checkno']) && !empty($_POST['amount'])))) {
+
     $setEscrowRefundValues->reference = $_POST['checkno'];
     $setEscrowRefundValues->payTotal = $_POST['amount'];
     $setEscrowRefundValues->checkDate = $_POST['checkdate'];
+    $response = $setEscrowRefundValues->enterRefundedAmount();
+    if ($response == 'success') {
+        echo "<script>alert('Refund Successful')</script>";
+        die('<script>window.location.href = "index.php";</script>');
+    } else {
+        echo "<script>alert('Refund Failed')</script>";
+    }
 }
 ?>
 <!doctype html>

@@ -35,7 +35,7 @@ namespace OpenEMR\Escrow;
             return sqlQuery($rsql, [$_SESSION['pid']]);
         }
 
-        public function enterRefundedAmount()
+        public function enterRefundedAmount(): string
         {
 
             $sql = "INSERT INTO `ar_session` (`session_id`,
