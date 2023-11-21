@@ -37,10 +37,10 @@ if ((isset($_POST['checkno']) && isset($_POST['amount']) && (!empty($_POST['chec
             <h3><?php echo xlt("Refund") ?></h3>
             <form class="form-group" method="post" action="refund.php">
                 <label for="Check#"><?php echo xlt("Check Date") ?>#
-                    <input type="text" class="form-control" name="checkdate" >
+                    <input type="text" class="form-control w-50" name="checkdate" >
                 </label>
                 <label for="Check#"><?php echo xlt("Check") ?>#
-                    <input type="text" class="form-control" name="checkno" >
+                    <input type="text" class="form-control w-50" name="checkno" >
                 </label>
                 <label for="amount"><?php echo xlt("Amount") ?>
                     <input type="text" class="form-control" name="amount" >
