@@ -28,7 +28,7 @@ if ((isset($_POST['checkno']) && isset($_POST['amount']) && (!empty($_POST['chec
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo xlt('Escrow Refund'); ?></title>
-    <?php Header::setupHeader(); ?>
+    <?php Header::setupHeader(['common', 'datetime-picker']); ?>
 </head>
 <body>
 <div class="container">
@@ -37,7 +37,7 @@ if ((isset($_POST['checkno']) && isset($_POST['amount']) && (!empty($_POST['chec
             <h3><?php echo xlt("Refund") ?></h3>
             <form class="form-group" method="post" action="refund.php">
                 <label for="Check#"><?php echo xlt("Check Date") ?>
-                    <input type="text" class="form-control w-50" name="checkdate" >
+                    <input type="text" id="datepicker" class="form-control w-50" name="checkdate" >
 
                 <label for="Check#"><?php echo xlt("Check") ?>#
                     <input type="text" class="form-control w-50" name="checkno" >
@@ -50,6 +50,18 @@ if ((isset($_POST['checkno']) && isset($_POST['amount']) && (!empty($_POST['chec
         </div>
     </div>
 </div>
+<script>
+    $(function() {
+        $('.datepicker').datetimepicker({
+            <?php $datetimepicker_timepicker = false; ?>
+            <?php $datetimepicker_showseconds = false; ?>
+            <?php $datetimepicker_formatInput = true; ?>
+            <?php require $GLOBALS['srcdir'] . '/js/xl/jquery-datetimepicker-2-5-4.js.php'; ?>
+            <?php // can add any additional javascript settings to datetimepicker here; need to prepend first setting with a comma
+            ?>
+        });
+    });
+</script>
 </body>
 </html>
 
