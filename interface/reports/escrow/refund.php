@@ -7,7 +7,18 @@
  * Copyright (c) 2023.
  */
 require_once dirname(__FILE__, 3) . "/globals.php";
+require_once "Escrow.php";
+
 use OpenEMR\Core\Header;
+use OpenEMR\Escrow\Escrow;
+
+$setEscrowRefundValues = new Escrow();
+
+if ((isset($_POST['checkno']) && isset($_POST['amount']) && (!empty($_POST['checkno']) && !empty($_POST['amount'])))) {
+    $setEscrowRefundValues->reference = $_POST['checkno'];
+    $setEscrowRefundValues->payTotal = $_POST['amount'];
+    $setEscrowRefundValues->checkDate = $_POST['checkdate'];
+}
 ?>
 <!doctype html>
 <html>
@@ -25,6 +36,9 @@ use OpenEMR\Core\Header;
         <div class="col-12">
             <h3><?php echo xlt("Refund") ?></h3>
             <form class="form-group" method="post" action="refund.php">
+                <label for="Check#"><?php echo xlt("Check Date") ?>#
+                    <input type="text" class="form-control" name="checkdate" >
+                </label>
                 <label for="Check#"><?php echo xlt("Check") ?>#
                     <input type="text" class="form-control" name="checkno" >
                 </label>

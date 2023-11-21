@@ -12,6 +12,10 @@ namespace OpenEMR\Escrow;
     {
         public int $arSessionId;
         public int $encounter;
+        public string $checkDate;
+        public string $payTotal;
+        public string $reference;
+
         public function retrieveAllEscrowPayments(): array
         {
             $esql = "SELECT `session_id`, `check_date`, `pay_total`, `payment_method` FROM `ar_session` WHERE `patient_id` = ?" .
@@ -29,6 +33,52 @@ namespace OpenEMR\Escrow;
         {
             $rsql = "SELECT session_id, reference, check_date, pay_total FROM `ar_session` WHERE patient_id = ? AND adjustment_code = 'refund_balance'";
             return sqlQuery($rsql, [$_SESSION['pid']]);
+        }
+
+        public function enterRefundedAmount()
+        {
+
+            $sql = "INSERT INTO `ar_session` (`session_id`,
+                          `payer_id`,
+                          `user_id`,
+                          `closed`,
+                          `reference`,
+                          `check_date`,
+                          `deposit_date`,
+                          `pay_total`,
+                          `created_time`,
+                          `modified_time`,
+                          `global_amount`,
+                          `payment_type`,
+                          `description`,
+                          `adjustment_code`,
+                          `post_to_date`,
+                          `patient_id`,
+                          `payment_method`
+                          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            sqlStatement($sql,
+                [
+                    NULL,
+                    0,
+                    $_SESSION['authUserID'],
+                    0,
+                    $this->reference,
+                    $this->checkDate,
+                    $this->checkDate,
+                    $this->payTotal,
+                    CURRENT_TIMESTAMP(),
+                    CURRENT_TIMESTAMP(),
+                    '0.00',
+                    'clinic',
+                    'Balance Refund',
+                    'refund_balance',
+                    NOW(),
+                    $_SESSION['pid'],
+                    'check_payment'
+                ]);
+
+             return 'success';
         }
 
         public function getEncounterPayments(): array
