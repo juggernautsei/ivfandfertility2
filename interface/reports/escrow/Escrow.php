@@ -55,7 +55,7 @@ namespace OpenEMR\Escrow;
                           `post_to_date`,
                           `patient_id`,
                           `payment_method`
-                          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 sqlStatement($sql,
                     /*[
@@ -83,7 +83,7 @@ namespace OpenEMR\Escrow;
                     $this->checkDate,
                     $this->checkDate,
                     $this->payTotal,
-                    '2023-11-09 21:31:03', '2023-11-09 21:28:12', '0.00',         'clinic',     'Balance Refund', 'refund_balance', '2023-11-09',    26268,       'check_payment'
+                    '2023-11-09 21:28:12', '0.00',         'clinic',     'Balance Refund', 'refund_balance', '2023-11-09',    26268,       'check_payment'
                     ]);
             } catch (\Exception $e) {
                 return $e->getMessage();
