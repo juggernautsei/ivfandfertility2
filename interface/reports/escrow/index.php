@@ -110,7 +110,7 @@ $refund = $showAllPayments->getRefund();
                             echo "</tr>";
 
                         }
-                        $lessRefund = (int)$refund['pay_total'] ?? 0;
+                        $lessRefund = empty($refund['pay_total']) ? 0 : (int)$refund['pay_total'];
                         $remaining = (int)$amount['pay_total'] - $sumOfPayments;
                         echo "<tr>";
                         echo "<td>" . xlt('Remaining Balance') . "</td><td></td><td></td><td>" . ($lessRefund + $remaining) . ".00</td>";
