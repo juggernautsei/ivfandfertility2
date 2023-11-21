@@ -55,7 +55,7 @@ namespace OpenEMR\Escrow;
                           `post_to_date`,
                           `patient_id`,
                           `payment_method`
-                          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                          ) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), ?, ?, ?, ?, NOW(), ?, ?, ?)";
 
             sqlStatement($sql,
                 [
@@ -67,13 +67,10 @@ namespace OpenEMR\Escrow;
                     $this->checkDate,
                     $this->checkDate,
                     $this->payTotal,
-                    CURRENT_TIMESTAMP(),
-                    CURRENT_TIMESTAMP(),
                     '0.00',
                     'clinic',
                     'Balance Refund',
                     'refund_balance',
-                    NOW(),
                     $_SESSION['pid'],
                     'check_payment'
                 ]);
