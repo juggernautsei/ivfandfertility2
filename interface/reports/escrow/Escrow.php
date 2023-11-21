@@ -75,7 +75,12 @@ namespace OpenEMR\Escrow;
                         'check_payment'
                     ]*/
                 [
-                    '',         0,          1,         0,       '#1486',     '2023-11-01', '2023-11-08',   '-6350.00',  '2023-11-09 21:31:03', '2023-11-09 21:28:12', '0.00',         'clinic',     'Balance Refund', 'refund_balance', '2023-11-09',    26268,       'check_payment'
+                    '',
+                    0,
+                    $_SESSION['authUserID'],
+                    0,
+                    $this->reference,
+                    '2023-11-01', '2023-11-08',   '-6350.00',  '2023-11-09 21:31:03', '2023-11-09 21:28:12', '0.00',         'clinic',     'Balance Refund', 'refund_balance', '2023-11-09',    26268,       'check_payment'
                     ]);
             } catch (\Exception $e) {
                 return $e->getMessage();
