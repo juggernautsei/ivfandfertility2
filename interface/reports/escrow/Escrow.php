@@ -56,24 +56,27 @@ namespace OpenEMR\Escrow;
                           `patient_id`,
                           `payment_method`
                           ) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), ?, ?, ?, ?, NOW(), ?, ?, ?)";
-
-            sqlStatement($sql,
-                [
-                    NULL,
-                    0,
-                    $_SESSION['authUserID'],
-                    0,
-                    $this->reference,
-                    $this->checkDate,
-                    $this->checkDate,
-                    $this->payTotal,
-                    '0.00',
-                    'clinic',
-                    'Balance Refund',
-                    'refund_balance',
-                    $_SESSION['pid'],
-                    'check_payment'
-                ]);
+            try {
+                sqlStatement($sql,
+                    [
+                        NULL,
+                        0,
+                        $_SESSION['authUserID'],
+                        0,
+                        $this->reference,
+                        $this->checkDate,
+                        $this->checkDate,
+                        $this->payTotal,
+                        '0.00',
+                        'clinic',
+                        'Balance Refund',
+                        'refund_balance',
+                        $_SESSION['pid'],
+                        'check_payment'
+                    ]);
+            } catch (\Exception $e) {
+                return $e->getMessage();
+            }
 
              return 'success';
         }

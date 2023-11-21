@@ -24,7 +24,7 @@ if ((isset($_POST['checkno']) && isset($_POST['amount']) && (!empty($_POST['chec
         echo "<script>alert('Refund Successful')</script>";
         die('<script>window.location.href = "index.php";</script>');
     } else {
-        echo "<script>alert('Refund Failed')</script>";
+        echo "<script>" . $response . "</script>";
     }
 }
 ?>
