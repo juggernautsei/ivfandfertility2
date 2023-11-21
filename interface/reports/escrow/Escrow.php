@@ -59,7 +59,7 @@ namespace OpenEMR\Escrow;
             try {
                 sqlStatement($sql,
                     [
-                        NULL,
+                        '',
                         0,
                         $_SESSION['authUserID'],
                         0,
