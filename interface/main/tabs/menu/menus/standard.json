@@ -1355,6 +1355,18 @@
               "med"
             ]
           },
+            {
+                "label": "2023 Real World Testing Report",
+                "menu_id": "rep0",
+                "target": "rep",
+                "url": "/interface/reports/rwt_2023_report.php",
+                "children": [],
+                "requirement": 0,
+                "acl_req": [
+                    "admin",
+                    "users"
+                ]
+            },
           {
             "label": "Message List",
             "menu_id": "rep0",
@@ -1461,6 +1473,8 @@
             "children": [],
             "requirement": 0,
             "acl_req": [
+              "admin",
+              "users"
             ]
           },
           {
