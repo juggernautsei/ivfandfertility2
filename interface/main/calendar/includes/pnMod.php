@@ -430,7 +430,8 @@ function pnModAPIFunc($modname, $type, $func, $args = array())
     // Build function name and call function
     $modapifunc = "{$modname}_{$type}api_{$func}";
     if (function_exists($modapifunc)) {
-        error_log("modapifunc: $args", 0);
+        $modapi = print_r($args, true);
+        error_log("modapifunc: $modapi", 0);
         return $modapifunc($args);
     }
 
