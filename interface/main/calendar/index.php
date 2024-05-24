@@ -152,7 +152,6 @@ if (isset($catid)) {
 if (pnModAvailable($module)) {
     if (pnModLoad($module, $type)) {
         // Run the function
-        error_log("module-: $module, type-: $type, func-: $func", 0);
         $return = pnModFunc($module, $type, $func);
     } else {
         $return = false;
