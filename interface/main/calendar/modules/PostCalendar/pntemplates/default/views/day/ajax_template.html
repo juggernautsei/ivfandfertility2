@@ -499,7 +499,7 @@ foreach ($providers as $provider) {
                 // create a numeric start and end for comparison
                 $starth = substr($e1['startTime'], 0, 2);
                 $startm = substr($e1['startTime'], 3, 2);
-                $e1Start = ($starth * 60) + $startm;
+                $e1Start = ($starth * 60) + $startm ?? 0;
                 $e1End = $e1Start + $e1['duration']/60;
 
                 // three ways to overlap:
