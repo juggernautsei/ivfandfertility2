@@ -13,6 +13,7 @@
  * @license   https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
  */
 
+global $pid;
 require_once(__DIR__ . "/../../globals.php");
 require_once("$srcdir/FeeSheetHtml.class.php");
 require_once("codes.php");
@@ -967,7 +968,7 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
                              "</p>\n";
                     } else { // the encounter is not yet billed
                         ?>
-                        <fieldset>
+                        <!--<fieldset>
                         <legend><?php echo xlt('Set Price Level'); ?></legend>
                             <div class='form-group mx-5 text-center'>
                                 <?php
@@ -995,7 +996,7 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
                                 }
                                 ?>
                             </div>
-                        </fieldset>
+                        </fieldset>-->
 
                     <fieldset>
                     <legend><?php echo xlt("Select Code")?></legend>
