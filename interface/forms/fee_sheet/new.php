@@ -998,7 +998,7 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
                             </div>
                         </fieldset>-->
 
-                    <fieldset>
+                    <!--<fieldset>
                     <legend><?php echo xlt("Select Code")?></legend>
                     <div class='text-center'>
                         <table class="table" width="95%">
@@ -1101,7 +1101,7 @@ $oemr_ui = new OemrUI($arrOeUiSettings);
 
                                 </table>
                             </div>
-                        </fieldset>
+                        </fieldset>-->
 
                         <fieldset>
                             <legend><?php echo xlt("Search for Additional Codes")?></legend>
