@@ -780,7 +780,6 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
     while ($erow = sqlFetchArray($eres)) {
         $patient_id = $erow['pid'];
         $encounter_id = $erow['encounter'];
-        $patient_email = $erow['email'];
         $pt_balance = $erow['charges'] + $erow['sales'] + $erow['copays'] - $erow['payments'] - $erow['adjustments'];
         $pt_balance = 0 + sprintf("%.2f", $pt_balance); // yes this seems to be necessary
         $svcdate = substr($erow['date'], 0, 10);
@@ -1175,7 +1174,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
                 }
 
                 echo "  <td class='detail'>&nbsp;" . text($ptname) . "</td>\n";
-                echo "  <td class='detail'>&nbsp;" . text($patient_email) . "</td>\n";
+                echo "  <td class='detail'>&nbsp;" . $erow['email'] . "</td>\n";
                 if ($form_cb_ssn) {
                     echo "  <td class='detail'>&nbsp;" . text($row['ss']) . "</td>\n";
                 }
