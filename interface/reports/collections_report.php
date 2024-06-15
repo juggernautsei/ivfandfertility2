@@ -855,6 +855,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
         $row['state']     = $erow['state'];
         $row['zipcode']   = $erow['postal_code'];
         $row['phone']     = $erow['phone_cell'];
+        $row['email']     = $erow['email'];
         $row['duncount']  = $duncount;
         $row['dos']       = $svcdate;
         $row['ss']        = $erow['ss'];
@@ -1173,7 +1174,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
                 }
 
                 echo "  <td class='detail'>&nbsp;" . text($ptname) . "</td>\n";
-                echo "  <td class='detail'>&nbsp;" . text($row['email']) . "</td>\n";
+                echo "  <td class='detail'>&nbsp;" . text($erow['email']) . "</td>\n";
                 if ($form_cb_ssn) {
                     echo "  <td class='detail'>&nbsp;" . text($row['ss']) . "</td>\n";
                 }
