@@ -1106,7 +1106,8 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
 
     $ptrow = array('insname' => '', 'pid' => 0);
     $orow = -1;
-
+    echo "<pre>";
+var_dump($rows); die;
     foreach ($rows as $key => $row) {
         list($insname, $unused , $ptname, $trash) = explode('|', $key);
         list($pid, $encounter) = explode(".", $row['invnumber']);
