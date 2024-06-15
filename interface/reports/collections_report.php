@@ -751,7 +751,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
     $query = "SELECT f.id, f.date, f.pid, CONCAT(w.lname, ', ', w.fname) AS provider_id, f.encounter, f.last_level_billed, " .
       "f.last_level_closed, f.last_stmt_date, f.stmt_count, f.invoice_refno, " .
       "p.fname, p.mname, p.lname, p.street, p.city, p.state, " .
-      "p.postal_code, p.phone_cell, p.ss, p.billing_note, " .
+      "p.postal_code, p.phone_cell, p.ss, p.billing_note, p.email, " .
       "p.pubpid, p.DOB, CONCAT(u.lname, ', ', u.fname) AS referrer, " .
       "( SELECT bill_date FROM billing AS b WHERE " .
       "b.pid = f.pid AND b.encounter = f.encounter AND " .
@@ -1030,6 +1030,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
     <?php } ?>
         <?php if (!$is_ins_summary) { ?>
     <th>&nbsp;<?php echo xlt('Name')?></th>
+    <th>Email</th>
     <?php } ?>
         <?php if ($form_cb_ssn) { ?>
     <th>&nbsp;<?php echo xlt('SSN')?></th>
@@ -1172,6 +1173,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
                 }
 
                 echo "  <td class='detail'>&nbsp;" . text($ptname) . "</td>\n";
+                echo "  <td class='detail'>&nbsp;" . text($row['email']) . "</td>\n";
                 if ($form_cb_ssn) {
                     echo "  <td class='detail'>&nbsp;" . text($row['ss']) . "</td>\n";
                 }
