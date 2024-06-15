@@ -1106,8 +1106,7 @@ if (!empty($_POST['form_refresh']) || !empty($_POST['form_export']) || !empty($_
 
     $ptrow = array('insname' => '', 'pid' => 0);
     $orow = -1;
-    echo "<pre>";
-var_dump($rows); die;
+
     foreach ($rows as $key => $row) {
         list($insname, $unused , $ptname, $trash) = explode('|', $key);
         list($pid, $encounter) = explode(".", $row['invnumber']);
@@ -1175,7 +1174,7 @@ var_dump($rows); die;
                 }
 
                 echo "  <td class='detail'>&nbsp;" . text($ptname) . "</td>\n";
-                echo "  <td class='detail'>&nbsp;" . $erow['email'] . "</td>\n";
+                echo "  <td class='detail'>&nbsp;" . $row['email'] . "</td>\n";
                 if ($form_cb_ssn) {
                     echo "  <td class='detail'>&nbsp;" . text($row['ss']) . "</td>\n";
                 }
