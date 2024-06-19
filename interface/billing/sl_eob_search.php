@@ -186,6 +186,7 @@ function validEmail($email)
 
 function emailLogin($patient_id, $message)
 {
+    file_put_contents("/var/www/html/traps/email_send.log", $message, FILE_APPEND);
     $patientData = sqlQuery("SELECT * FROM `patient_data` WHERE `pid`=?", array($patient_id));
     if ($patientData['hipaa_allowemail'] != "YES" || empty($patientData['email']) || empty($GLOBALS['patient_reminder_sender_email'])) {
         return false;
@@ -221,6 +222,7 @@ function emailLogin($patient_id, $message)
     $mail->AltBody = $message;
 
     if ($mail->Send()) {
+        file_put_contents("/var/www/html/traps/email_sent.log", $message, FILE_APPEND);
         return true;
     } else {
         $email_status = $mail->ErrorInfo;
@@ -260,9 +262,10 @@ function upload_file_to_client_email($ppid, $file_to_send)
         $message = $message . $OneLine . '<br />';
 
     }
+    file_put_contents("/var/www/html/traps/email.log", $message, FILE_APPEND);
     emailLogin($ppid, $message);
     fclose($file);
-    echo "<script> alert(" . xlj('No invoices were checked.') . ")\n</script>";
+    echo "<script> alert(" . xlj('Invoices Emailed!.') . ")\n</script>";
 }
 
 function upload_file_to_client_pdf($file_to_send, $aPatFirstName = '', $aPatID = null, $flagCFN = false)
