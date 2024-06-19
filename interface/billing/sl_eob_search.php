@@ -258,8 +258,11 @@ function upload_file_to_client_email($ppid, $file_to_send)
         $OneLine = fgets($file);//one line is read
 
         $message = $message . $OneLine . '<br />';
-        emailLogin($ppid, $message);
+
     }
+    emailLogin($ppid, $message);
+    fclose($file);
+    echo "<script> alert(" . xlj('No invoices were checked.') . ")\n</script>";
 }
 
 function upload_file_to_client_pdf($file_to_send, $aPatFirstName = '', $aPatID = null, $flagCFN = false)
