@@ -258,11 +258,8 @@ function upload_file_to_client_email($ppid, $file_to_send)
         $OneLine = fgets($file);//one line is read
 
         $message = $message . $OneLine . '<br />';
-
-        $countline++;
+        emailLogin($ppid, $message);
     }
-
-    emailLogin($ppid, $message);
 }
 
 function upload_file_to_client_pdf($file_to_send, $aPatFirstName = '', $aPatID = null, $flagCFN = false)
