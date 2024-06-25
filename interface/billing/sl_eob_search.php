@@ -221,6 +221,18 @@ function emailLogin($patient_id, $message)
     $mail->AltBody = $message;
 
     if ($mail->Send()) {
+        //send text message to patient to inform balance
+        if (class_exists('SendMessage')) {
+            $text = new \Juggernaut\App\Controllers\SendMessage();
+            $balance = get_patient_balance($patient_id);
+            $message = "You have a balance of $" . $balance . " please pay at your earliest convenience. " . $facility['name'] . "Check your email for statement. It may be in your spam or junk folder.";
+            $text->outBoundMessage($patientData['phone_cell'], $message);
+        }
+        $text = new \Juggernaut\App\Controllers\SendMessage();
+        $balance = get_patient_balance($patient_id);
+        $message = "You have a balance of $" . $balance . " please pay at your earliest convenience. " . $facility['name'] . "Check your email for statement. It may be in your spam or junk folder.";
+        $text->outBoundMessage($patientData['phone_cell'], $message);
+
         return true;
     } else {
         $email_status = $mail->ErrorInfo;
