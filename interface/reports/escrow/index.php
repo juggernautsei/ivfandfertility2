@@ -42,8 +42,7 @@ $refund = $showAllPayments->getRefund();
     ?>
     <style>
         @media only print {
-            #demoD { visibility: hidden; },
-            #refund { visibility: hidden; }
+            #demoD, #refund  { display: none; }
         }
     </style>
 </head>
