@@ -1421,12 +1421,12 @@ if (empty($_POST['form_csvexport'])) {
     <a href='javascript:;' class='btn btn-secondary btn-transmit' onclick='$("#form_csvexport").attr("value","true"); $("#theform").submit();'>
             <?php echo xlt('Export Selected as CSV'); ?>
     </a>
-    <a href='javascript:;' class='btn btn-secondary btn-transmit' onclick='$("#form_export").attr("value","true"); $("#form_csvexport").val(""); $("#form_clear_ins_debt").val("");$("#theform").submit();'>
-            <?php echo xlt('Export Selected to Collections'); ?>
-    </a>
-    <a href='javascript:;' class='btn btn-secondary btn-transmit' onclick='$("#form_clear_ins_debt").attr("value", "true"); $("#form_export").val(""); $("#form_csvexport").attr("value", "true"); $("#theform").submit();'>
-            <?php echo xlt('Clear Insurance Debt'); ?>
-    </a>
+    <!--<a href='javascript:;' class='btn btn-secondary btn-transmit' onclick='$("#form_export").attr("value","true"); $("#form_csvexport").val(""); $("#form_clear_ins_debt").val("");$("#theform").submit();'>
+            <?php //echo xlt('Export Selected to Collections'); ?>
+    </a>-->
+    <!--<a href='javascript:;' class='btn btn-secondary btn-transmit' onclick='$("#form_clear_ins_debt").attr("value", "true"); $("#form_export").val(""); $("#form_csvexport").attr("value", "true"); $("#theform").submit();'>
+            <?php //echo xlt('Clear Insurance Debt'); ?>
+    </a>-->
   </div>
 
   <div style='float:left'>
