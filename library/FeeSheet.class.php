@@ -522,6 +522,13 @@ class FeeSheet
                             }
                         }
                     }
+                } else if (!empty($prdefault) && !empty($prdefault['pr_price'])) {
+                    // Fallback: if specific price level not found, use default price level
+                    $fee = $prdefault['pr_price'];
+                    error_log("FeeSheet: Price level '$pricelevel' not found for code_id=$codes_id, using default price: $fee");
+                } else {
+                    // Log when no price is found at all
+                    error_log("FeeSheet: No price found for code_id=$codes_id, code=$code, codetype=$codetype, pricelevel=$pricelevel");
                 }
             }
         }

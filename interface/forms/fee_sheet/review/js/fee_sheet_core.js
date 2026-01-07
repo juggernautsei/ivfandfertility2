@@ -73,12 +73,14 @@ function codeselect_and_save(selobj)
   if (i) {
     var f = document.forms[0];
     if (selobj) f.newcodes.value = selobj.options[i].value;
+    console.log('FeeSheet: Adding code - ' + f.newcodes.value);
     // Submit the newly selected code.
     top.restoreSession();
     var form_data=$("form").serialize() + "&running_as_ajax=1";
     $.post(fee_sheet_new,form_data,
       function(data) {
         // "data" here is the complete newly generated fee sheet HTML.
+        console.log('FeeSheet: Code added, refreshing display');
         f.newcodes.value = "";
         // Clear the selection
         if (selobj) $(selobj).find("option:selected").prop("selected",false);
@@ -87,10 +89,21 @@ function codeselect_and_save(selobj)
         if (update_display_table(data)) {
           // Save the newly selected code. Parameter running_as_ajax tells new.php
           // to regenerate the form, including its checksum, after saving.
+          console.log('FeeSheet: Saving code');
           var form_data = $("form").serialize() + "&bn_save=Save&running_as_ajax=1";
           $.post(fee_sheet_new, form_data,
             function(data) {
+              console.log('FeeSheet: Code saved, final update');
               update_display_table(data);
+              // Check if any price fields are empty or zero
+              $('input[name*="[price]"]').each(function() {
+                const price = $(this).val();
+                if (!price || price === '0' || price === '0.00') {
+                  const row = $(this).closest('tr');
+                  const codeText = row.find('.billcell').eq(2).text();
+                  console.warn('FeeSheet: Price is zero or empty for: ' + codeText);
+                }
+              });
             }
           );
         }
